@@ -1174,7 +1174,7 @@ window.HERO.word = PROD[cur].word;
 })();
 
 /* ============ טופס → Google Sheets (Apps Script) ============ */
-const LEADS_URL = ''; // כתובת ה-Web App של Apps Script (מסתיימת ב-/exec). ריק = הטופס מפנה לוואטסאפ.
+const LEADS_URL = 'https://script.google.com/macros/s/AKfycbwYeWvF6HfrWjmJeVGk4srgwOFDBB7sRDx-_cNvwoZAN_U41es1r4AU2m26iiFBJfflcw/exec'; // כתובת ה-Web App של Apps Script (מסתיימת ב-/exec). ריק = הטופס מפנה לוואטסאפ.
 async function submitLead(e) {
   e.preventDefault();
   const form = e.target, ok = document.getElementById('formOk'), btn = form.querySelector('button[type="submit"]'), orig = btn.innerHTML;
