@@ -8,6 +8,9 @@
   <title>AI Lab Pro — סוכני AI, אוטומציות, מערכות ואפליקציות לעסקים</title>
   <meta name="description" content="סוכני AI, אוטומציות, מערכות פנימיות ואפליקציות לעסק שלך. ממי שבונה היום לסמסונג, ניופאן, האייר וקבוצת אביב. נבנה עם Claude, מחיר ידוע מראש.">
 
+  <!-- Google tag (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YVHQM9L20S"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-YVHQM9L20S');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Hebrew:wdth,wght@62.5..100,100..900&family=Noto+Sans+Hebrew:wdth,wght@62.5..100,100..900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -1136,6 +1139,15 @@ window.HERO.word = PROD[cur].word;
     const cm = document.getElementById('calcMore'); const calcEl = document.querySelector('.calc');
     if (cm && calcEl) { cm.style.display = 'inline-flex'; cm.addEventListener('click', () => { calcEl.classList.add('more'); ScrollTrigger.refresh(); }); }
   }
+
+
+  // ---- מדידה: אירועי GA4 ----
+  const ev = (name, params) => { if (window.gtag) gtag('event', name, params || {}); };
+  document.querySelectorAll('a[href*="wa.me"]').forEach(a => a.addEventListener('click', () => ev('whatsapp_click', { location: a.closest('section,header,nav,footer')?.id || a.closest('header,nav,footer')?.className || 'page' })));
+  document.querySelectorAll('a[href="#seat"]').forEach(a => a.addEventListener('click', () => ev('cta_click', { location: a.closest('section,header,nav')?.id || 'nav' })));
+  document.querySelectorAll('.chip').forEach(b => b.addEventListener('click', () => ev('select_product', { product: b.dataset.k })));
+  let calcSent = false; [rl, rm, rv].forEach(r => r.addEventListener('input', () => { if (!calcSent) { calcSent = true; ev('calculator_use', {}); } }));
+  document.querySelectorAll('#menu li').forEach(li => li.addEventListener('click', () => ev('menu_open', { product: li.dataset.k })));
 
   // ---- rail ----
   const rail = document.getElementById('rail'), railLinks = rail.querySelectorAll('a');
