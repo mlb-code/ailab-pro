@@ -902,6 +902,7 @@ html.static body::after,html.static .marq .track,html.static .hint::after,html.s
       </div>
     </div>
     <form class="form" id="leadForm" onsubmit="return submitLead(event)">
+      <input type="text" name="website" id="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0;height:0" aria-hidden="true">
       <div class="field"><label for="name">שם</label><input type="text" id="name" name="name" placeholder="איך קוראים לך?" required autocomplete="name"></div>
       <div class="field opt"><label for="biz">העסק</label><input type="text" id="biz" name="biz" placeholder="שם העסק ותחום"></div>
       <div class="field"><label for="phone">טלפון (וואטסאפ)</label><input type="tel" id="phone" name="phone" placeholder="050-0000000" required autocomplete="tel"></div>
@@ -975,6 +976,7 @@ const PROD = {
   system:{name:'מערכת פנימית',word:'מערכת',h:'מערכת פנימית במקום אקסלים ושלוש תוכנות.',p:'בנויה לתהליך שלך, לא לתהליך ממוצע. גרסה עובדת כל שבוע, הקוד בריפו שלך. <strong>30 עד 45 יום, החל מ‑₪29,000.</strong>'},
   app:{name:'אפליקציה',word:'אפליקציה',h:'אפליקציה ללקוחות שלך או לצוות בשטח.',p:'הרשמה, תשלום, אזור אישי, התראות. מהאפיון לחנות, באותם תנאים של מערכת. <strong>החל מ‑₪34,000.</strong>'},
 };
+window.PROD = PROD;
 const LOG=[['23:12','הודעה נכנסת','"היי, אפשר לקבל פרטים על השירות?"'],['23:12','הסוכן עונה','בשפה שלך, עם המידע הנכון. תוך ארבע שניות.'],['23:13','שאלות הכנה','מה צריך, מתי, איפה. בלי לחפור.'],['23:14','נקבעה שיחה','מחר 10:30. הזמנה ביומן שלך, תזכורת ללקוח.'],['08:00','דוח בוקר','מה נכנס בלילה, מה נקבע, מה דורש אותך.']];
 
 /* ============ בסיס: מצב סטטי, Lenis, ScrollTrigger ============ */
@@ -1171,10 +1173,29 @@ window.HERO.word = PROD[cur].word;
   document.fonts && document.fonts.ready.then(() => ScrollTrigger.refresh());
 })();
 
-/* ============ טופס (במוקאפ: לא שולח) ============ */
-function submitLead(e) {
+/* ============ טופס → Google Sheets (Apps Script) ============ */
+const LEADS_URL = ''; // כתובת ה-Web App של Apps Script (מסתיימת ב-/exec). ריק = הטופס מפנה לוואטסאפ.
+async function submitLead(e) {
   e.preventDefault();
-  alert('במוקאפ הטופס לא שולח. בגרסה האמיתית הפרטים ייכנסו לגוגל שיטס ותקבל מייל.');
+  const form = e.target, ok = document.getElementById('formOk'), btn = form.querySelector('button[type="submit"]'), orig = btn.innerHTML;
+  const v = id => (document.getElementById(id).value || '').trim();
+  const data = { name: v('name'), biz: v('biz'), phone: v('phone'), goal: v('goal'), website: v('website'),
+    product: (window.PROD && window.PROD[document.documentElement.getAttribute('data-product')] || {}).name || '',
+    source: 'pro.ai-lab.co.il' + (location.search || '') };
+  if (!data.name) { alert('רק שם וטלפון, ואני חוזר אליך.'); document.getElementById('name').focus(); return false; }
+  if (!/^0\d{1,2}[- ]?\d{3}[- ]?\d{4}$/.test(data.phone)) { alert('מספר הטלפון לא נראה תקין.'); document.getElementById('phone').focus(); return false; }
+  if (!LEADS_URL) { leadWhatsApp(); return false; }
+  btn.disabled = true; btn.textContent = 'שולח…';
+  try {
+    const res = await fetch(LEADS_URL, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(data) });
+    const json = await res.json(); if (!json.success) throw new Error(json.error || 'שגיאה');
+    if (window.gtag) gtag('event', 'generate_lead', { method: 'form', product: data.product });
+    ok.classList.add('show'); form.reset(); btn.textContent = 'נשלח';
+    setTimeout(() => { btn.disabled = false; btn.innerHTML = orig; }, 4000);
+  } catch (err) {
+    btn.disabled = false; btn.innerHTML = orig;
+    if (confirm('השליחה נכשלה. לשלוח במקום זה בוואטסאפ?')) leadWhatsApp();
+  }
   return false;
 }
 function leadWhatsApp() {
