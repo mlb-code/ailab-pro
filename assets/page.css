@@ -53,7 +53,8 @@ p b,li b{color:var(--fg);font-weight:600}
 .phero .fine{font-size:.86rem;color:var(--fg-3);margin-top:14px}
 .phero .fine b{color:var(--acc);font-weight:600}
 .bigword{font-family:var(--serif);font-weight:900;font-size:clamp(5rem,14vw,15rem);line-height:.9;color:var(--acc);font-variation-settings:"wdth" 70,"wght" 900;text-align:center;letter-spacing:-.02em;opacity:.95;filter:drop-shadow(0 0 40px rgba(232,166,74,.18));user-select:none}
-@media(max-width:860px){.phero{grid-template-columns:1fr;min-height:auto;padding-top:96px;gap:10px}.bigword{order:-1;font-size:clamp(4rem,22vw,6.5rem);text-align:right}.phero .ctas .btn{width:100%}}
+.bigword.long{font-size:clamp(4rem,9.5vw,10rem)}
+@media(max-width:860px){.phero{grid-template-columns:1fr;min-height:auto;padding-top:96px;gap:10px}.bigword,.bigword.long{order:-1;font-size:clamp(4rem,22vw,6.5rem);text-align:right}.phero .ctas .btn{width:100%;border-radius:999px}}
 
 /* CHAPTERS */
 .ch{padding-block:clamp(64px,10vh,120px);border-bottom:1px solid var(--line)}
