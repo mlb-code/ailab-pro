@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /
+Sitemap: https://pro.ai-lab.co.il/sitemap.xml
