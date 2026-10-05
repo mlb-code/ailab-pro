@@ -156,7 +156,7 @@ em{font-style:normal;color:var(--acc)}
 @keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 @media(max-width:760px){
   .hero{min-height:620px}
-  .hero-copy{justify-content:center;text-align:center;bottom:calc(92px + env(safe-area-inset-bottom));right:18px;left:18px}
+  .hero-copy{justify-content:center;text-align:center;bottom:calc(28px + env(safe-area-inset-bottom));bottom:calc(28px + env(safe-area-inset-bottom) + max(0px, 100% - 100svh));right:18px;left:18px}
   .hs{max-width:none}
   .hs h1,.hs .h{font-size:clamp(1.9rem,8.4vw,2.6rem)}
   .hs p{margin-inline:auto;font-size:1.02rem}
@@ -174,13 +174,14 @@ html.static .hero{height:880px}
 
 /* ============ PRICE STRIP (מתחת להירו) ============ */
 .pstrip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr)) auto;align-items:stretch;border-bottom:1px solid var(--line);padding-inline:var(--gutter)}
+.pstrip .pst-k{display:none}
 .pstrip a{display:flex;flex-direction:column;gap:4px;padding:20px 18px;border-inline-start:1px solid var(--line);min-width:0;transition:background .25s}
-.pstrip a:first-child{border-inline-start:0;padding-inline-start:0}
+.pstrip a:first-of-type{border-inline-start:0;padding-inline-start:0}
 .pstrip a:hover{background:rgba(232,166,74,.06)}
 .pstrip b{font-family:var(--serif);font-weight:700;font-size:clamp(1.3rem,2vw,1.8rem);line-height:1;color:var(--acc);font-variation-settings:"wdth" 70,"wght" 700}
 .pstrip span{font-size:.86rem;color:var(--fg-2)}
 .pstrip .all{justify-content:center;font-weight:600;color:var(--fg);white-space:nowrap}
-@media(max-width:760px){.pstrip{grid-template-columns:1fr 1fr;padding-inline:18px}.pstrip a{padding:14px 10px;border-inline-start:0;border-bottom:1px solid var(--line)}.pstrip a:nth-child(even){border-inline-start:1px solid var(--line);padding-inline-start:12px}.pstrip a:first-child{padding-inline-start:10px}.pstrip .all{grid-column:1/-1;border-bottom:0;padding:14px 10px;align-items:center}.pstrip b{font-size:1.25rem}.pstrip span{font-size:.8rem}}
+@media(max-width:760px){.pstrip{grid-template-columns:1fr 1fr;margin:0 12px;padding:16px 16px 4px;background:var(--bg-2);border:1px solid var(--line);border-radius:24px 24px 0 0;border-bottom:0}.pstrip .pst-k{display:block;grid-column:1/-1;font-size:.74rem;font-weight:600;letter-spacing:.06em;color:var(--acc);padding:0 10px 6px}.pstrip a{padding:14px 10px;border-inline-start:0;border-bottom:1px solid var(--line)}.pstrip a:nth-of-type(even){border-inline-start:1px solid var(--line);padding-inline-start:12px}.pstrip a:first-of-type{padding-inline-start:10px}.pstrip .all{grid-column:1/-1;border-bottom:0;padding:14px 10px;align-items:center}.pstrip b{font-size:1.25rem}.pstrip span{font-size:.8rem}}
 
 /* ============ CLIENTS STRIP ============ */
 .clients{display:flex;flex-wrap:wrap;align-items:center;gap:14px 34px;padding:26px var(--gutter);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -685,6 +686,7 @@ html.static body::after,html.static .marq .track,html.static .hint::after,html.s
 </section>
 
 <div class="pstrip" aria-label="מחירים">
+  <span class="pst-k">מחירים · החל מ‑, לפני מע"מ</span>
   <a href="/mapping/"><b class="num">₪4,900</b><span>מיפוי AI, מזוכה בבנייה</span></a>
   <a href="/automation/"><b class="num">₪4,900</b><span>אוטומציה ב‑14 יום</span></a>
   <a href="/agent/"><b class="num">₪9,900</b><span>סוכן AI</span></a>
