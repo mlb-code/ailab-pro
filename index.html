@@ -172,6 +172,16 @@ em{font-style:normal;color:var(--acc)}
 html.static .hero{height:880px}
 @media(min-width:761px) and (max-height:820px){.hs .h.sm{font-size:clamp(1.3rem,2vw,1.8rem)}.hs p{font-size:1rem}.hero-copy{bottom:28px}.pick{margin-top:14px}.hs .ctas{margin-top:14px}}
 
+/* ============ PRICE STRIP (מתחת להירו) ============ */
+.pstrip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr)) auto;align-items:stretch;border-bottom:1px solid var(--line);padding-inline:var(--gutter)}
+.pstrip a{display:flex;flex-direction:column;gap:4px;padding:20px 18px;border-inline-start:1px solid var(--line);min-width:0;transition:background .25s}
+.pstrip a:first-child{border-inline-start:0;padding-inline-start:0}
+.pstrip a:hover{background:rgba(232,166,74,.06)}
+.pstrip b{font-family:var(--serif);font-weight:700;font-size:clamp(1.3rem,2vw,1.8rem);line-height:1;color:var(--acc);font-variation-settings:"wdth" 70,"wght" 700}
+.pstrip span{font-size:.86rem;color:var(--fg-2)}
+.pstrip .all{justify-content:center;font-weight:600;color:var(--fg);white-space:nowrap}
+@media(max-width:760px){.pstrip{grid-template-columns:1fr 1fr;padding-inline:18px}.pstrip a{padding:14px 10px;border-inline-start:0;border-bottom:1px solid var(--line)}.pstrip a:nth-child(even){border-inline-start:1px solid var(--line);padding-inline-start:12px}.pstrip a:first-child{padding-inline-start:10px}.pstrip .all{grid-column:1/-1;border-bottom:0;padding:14px 10px;align-items:center}.pstrip b{font-size:1.25rem}.pstrip span{font-size:.8rem}}
+
 /* ============ CLIENTS STRIP ============ */
 .clients{display:flex;flex-wrap:wrap;align-items:center;gap:14px 34px;padding:26px var(--gutter);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .clients .names{display:flex;flex-wrap:wrap;gap:10px 40px;align-items:baseline}
@@ -646,6 +656,7 @@ html.static body::after,html.static .marq .track,html.static .hint::after,html.s
       <span class="k label">פנייה נכנסת. 23:40 בלילה.</span>
       <h1>הפניות לא מחכות לשעות הפעילות.</h1>
       <p>וואטסאפ, טופס, טלפון. בלילה, בשבת, באמצע פגישה. ומי שלא נענה תוך דקות, כבר כתב למישהו אחר.</p>
+      <div class="ctas"><a href="#seat" class="btn acc">לקבוע שיחת היכרות <span class="ar">←</span></a><a href="/pricing/" class="btn">מחירים</a></div>
     </div>
     <div class="hs" id="hs2">
       <span class="k label acc">08:00 בבוקר.</span>
@@ -673,6 +684,13 @@ html.static body::after,html.static .marq .track,html.static .hint::after,html.s
   <div class="hint" id="hint">גלול</div>
 </section>
 
+<div class="pstrip" aria-label="מחירים">
+  <a href="/mapping/"><b class="num">₪4,900</b><span>מיפוי AI, מזוכה בבנייה</span></a>
+  <a href="/automation/"><b class="num">₪4,900</b><span>אוטומציה ב‑14 יום</span></a>
+  <a href="/agent/"><b class="num">₪9,900</b><span>סוכן AI</span></a>
+  <a href="/system/"><b class="num">₪29,000</b><span>מערכת פנימית</span></a>
+  <a href="/pricing/" class="all">כל המחירים ←</a>
+</div>
 <div class="clients" aria-label="לקוחות">
   <span class="label">בונה היום עבור</span>
   <div class="names"><img src="logos/Samsung_wordmark.svg" alt="Samsung" style="height:24px"><img src="logos/newpan.svg" alt="ניופאן" style="height:30px"><img src="logos/Haier_logo.svg" alt="Haier" style="height:30px"><img src="logos/aviv-logo-black.png" alt="Aviv Urban" style="height:36px"></div>
@@ -1043,7 +1061,7 @@ window.HERO.word = PROD[cur].word;
     gsap.set(hs, { autoAlpha: 0 }); gsap.set(hs[0], { autoAlpha: 1 });
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: '#hero', start: 'top top', end: '+=190%', pin: true, scrub: 1.1, anticipatePin: 1, refreshPriority: 5,
+        trigger: '#hero', start: 'top top', end: '+=100%', pin: true, scrub: 1.1, anticipatePin: 1, refreshPriority: 5,
         onUpdate: (st) => { window.HERO.p = st.progress; },
         onToggle: (st) => { window.HERO.active = st.isActive; }
       }
