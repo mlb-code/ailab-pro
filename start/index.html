@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0F1A26">
+  <meta name="robots" content="noindex, nofollow">
+  <title>האזור האישי | AI Lab Pro</title>
+  <meta name="description" content="אזור אישי ללקוחות AI Lab Pro: שאלון קצר לכל תהליך בעסק שרוצים לשפר עם AI.">
+  <link rel="icon" href="/gem.png" type="image/png">
+  <!-- Google tag (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YVHQM9L20S"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-YVHQM9L20S');</script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "ysd8cjs20e");</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Hebrew:wdth,wght@62.5..100,100..900&family=Noto+Sans+Hebrew:wdth,wght@62.5..100,100..900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/page.css">
+  <link rel="stylesheet" href="/start/assets/intake.css">
+</head>
+<body>
+<header class="ihead">
+  <a href="/" class="logo"><img src="/gem.png" class="gem" alt="">AI Lab <small>PRO</small></a>
+  <nav id="ihnav" aria-label="חשבון"><a href="/">לאתר</a></nav>
+</header>
+
+<main class="main" id="app" aria-live="polite">
+  <p class="muted">טוען…</p>
+</main>
+
+<!-- login -->
+<template id="tpl-login">
+  <span class="kicker">AI LAB PRO · CLIENTS</span>
+  <h1 class="t">האזור האישי שלך.</h1>
+  <p class="lead">כאן ממלאים שאלון קצר על כל תהליך בעסק שרוצים לשפר. התשובות מגיעות אליי, מאיר, ואני עובר עליהן לפני שאנחנו מדברים.</p>
+  <div class="card">
+    <div id="oauthBox" class="oauth"></div>
+    <div id="orLine" class="or" hidden>או עם קוד למייל</div>
+    <form id="emailForm" novalidate>
+      <div class="f">
+        <label for="email">כתובת מייל</label>
+        <input class="in ltr" type="email" id="email" name="email" autocomplete="email" inputmode="email" placeholder="name@company.co.il" required>
+      </div>
+      <button class="btn acc block" type="submit" id="sendBtn">שלחו לי קוד כניסה</button>
+    </form>
+    <form id="codeForm" novalidate hidden>
+      <p class="muted" id="codeSent"></p>
+      <div class="f" style="margin-top:12px">
+        <label for="code">הקוד מהמייל (6 ספרות)</label>
+        <input class="in code" type="text" id="code" name="code" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]*" maxlength="6" required>
+      </div>
+      <button class="btn acc block" type="submit" id="verifyBtn">כניסה</button>
+      <div class="row" style="margin-top:14px">
+        <button type="button" class="linkbtn" id="resendBtn">שליחת קוד חדש</button>
+        <span class="spacer"></span>
+        <button type="button" class="linkbtn" id="changeEmail">מייל אחר</button>
+      </div>
+      <p class="muted" style="margin-top:12px">לא הגיע? לבדוק בתיקיית הספאם או קידומי מכירות. המייל נשלח מהכתובת <span dir="ltr">pro@ai-lab.co.il</span>.</p>
+    </form>
+    <div id="loginMsg"></div>
+  </div>
+  <p class="muted" style="margin-top:18px">הפרטים והתשובות נשמרים אצל AI Lab Pro ומשמשים רק לבחינת הפרויקט שלך. אפשר לבקש מחיקה בכל זמן.</p>
+</template>
+
+<!-- profile -->
+<template id="tpl-profile">
+  <span class="kicker">STEP 0 · PROFILE</span>
+  <h1 class="t" id="pTitle">נעים להכיר.</h1>
+  <p class="lead" id="pLead">פעם אחת, כדי שאדע עם מי אני מדבר. אחר כך עוברים לשאלון.</p>
+  <form id="profileForm" class="card" novalidate>
+    <input type="text" name="company_url" id="hp" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <div class="grid2" id="pFields"></div>
+    <div id="profileMsg"></div>
+    <div class="navbtns">
+      <button type="button" class="btn ghost" id="pCancel" hidden>ביטול</button>
+      <button type="submit" class="btn acc" id="pSave">שמירה והמשך</button>
+    </div>
+  </form>
+</template>
+
+<!-- dashboard -->
+<template id="tpl-dash">
+  <span class="kicker">YOUR PROCESSES</span>
+  <h1 class="t" id="hello">שלום.</h1>
+  <p class="lead">כל תהליך בעסק שרוצים לשפר = שאלון אחד. אפשר לשמור באמצע ולחזור אחר כך.</p>
+  <div class="row" style="margin-bottom:22px">
+    <button class="btn acc" id="newQ" type="button">שאלון חדש ←</button>
+    <button class="btn ghost sm" id="editProfile" type="button">עריכת פרטים</button>
+  </div>
+  <div id="dashMsg"></div>
+  <ul class="qlist" id="qlist"></ul>
+</template>
+
+<footer class="ifoot">AI Lab Pro · מאיר לביא · <a href="https://wa.me/972546500795" target="_blank" rel="noopener">וואטסאפ</a> · <a href="/">לאתר</a></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js"></script>
+<script src="/start/assets/config.js"></script>
+<script src="/start/assets/common.js"></script>
+<script src="/start/assets/questions.js"></script>
+<script src="/start/assets/home.js"></script>
+</body>
+</html>

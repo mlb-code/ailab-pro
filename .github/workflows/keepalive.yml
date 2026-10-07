@@ -1,0 +1,29 @@
+# Keeps the Supabase Free project (ailab-pro-intake) from pausing after 7 idle days.
+# Needs two repo secrets: INTAKE_SUPABASE_URL (https://<ref>.supabase.co) and INTAKE_SUPABASE_ANON_KEY (public anon key).
+# Without them the job skips quietly.
+name: intake-keepalive
+on:
+  schedule:
+    - cron: "17 6 * * *"   # daily 06:17 UTC
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase
+        env:
+          URL: ${{ secrets.INTAKE_SUPABASE_URL }}
+          KEY: ${{ secrets.INTAKE_SUPABASE_ANON_KEY }}
+        run: |
+          if [ -z "$URL" ] || [ -z "$KEY" ]; then echo "secrets not set yet, skipping"; exit 0; fi
+          for i in 1 2 3; do
+            code=$(curl -s -o /tmp/out -w "%{http_code}" -X POST "$URL/rest/v1/rpc/ping" \
+              -H "apikey: $KEY" -H "Authorization: Bearer $KEY" -H "Content-Type: application/json" -d '{}')
+            echo "attempt $i: HTTP $code $(cat /tmp/out)"
+            [ "$code" = "200" ] && exit 0
+            sleep 20
+          done
+          echo "::error::Supabase ping failed. The project may be paused: open supabase.com/dashboard and press Restore."
+          exit 1
