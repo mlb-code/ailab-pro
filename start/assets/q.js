@@ -115,7 +115,7 @@
         return;
       }
       const t = Q.valueText(f, answers[f.k]);
-      html += '<li><div class="row"><div class="q">' + I.esc(f.label) + '</div><span class="spacer"></span>' +
+      html += '<li><div class="row"><div class="q">' + I.esc(f.sum || f.label) + '</div><span class="spacer"></span>' +
         (readOnly ? '' : '<button type="button" class="linkbtn edit" data-go="' + i + '">עריכה</button>') + '</div>' +
         '<div class="a' + (t ? '' : ' none') + '">' + (t ? I.esc(t) : 'לא נענה') + '</div></li>';
     }));
@@ -161,7 +161,12 @@
     app.querySelectorAll('[data-k]').forEach(el => {
       const k = el.dataset.k;
       const handler = () => {
-        if (el.type === 'checkbox') answers[k] = Array.from(app.querySelectorAll('input[data-k="' + k + '"]:checked')).map(x => x.value);
+        if (el.type === 'checkbox') {
+          const f = Q.ALL.find(x => x.k === k);
+          if (f && f.none && el.checked) // "no concern" is exclusive with the other options
+            app.querySelectorAll('input[data-k="' + k + '"]:checked').forEach(x => { if (x !== el && (el.value === f.none || x.value === f.none)) x.checked = false; });
+          answers[k] = Array.from(app.querySelectorAll('input[data-k="' + k + '"]:checked')).map(x => x.value);
+        }
         else if (el.type === 'radio') answers[k] = el.value;
         else answers[k] = el.value;
         markDirty();
