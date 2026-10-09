@@ -10,9 +10,9 @@
 
   <!-- Google tag (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YVHQM9L20S"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-YVHQM9L20S');</script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}if(!/^(localhost|127\.0\.0\.1)$/.test(location.hostname)){gtag('js',new Date());gtag('config','G-YVHQM9L20S');}</script>
   <!-- Microsoft Clarity -->
-  <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "ysd8cjs20e");</script>
+  <script type="text/javascript">if(!/^(localhost|127\.0\.0\.1)$/.test(location.hostname)){(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "ysd8cjs20e");}</script>
   <link rel="canonical" href="https://pro.ai-lab.co.il/">
   <meta property="og:type" content="website"><meta property="og:locale" content="he_IL"><meta property="og:site_name" content="AI Lab Pro"><meta property="og:title" content="AI Lab Pro — סוכני AI, אוטומציות, מערכות ואפליקציות לעסקים"><meta property="og:description" content="סוכן AI שעונה ללקוחות, אוטומציות שמעלימות עבודה ידנית, מערכות ואפליקציות לעסק שלך. מחיר שרואים לפני השיחה. בונה היום לסמסונג, ניופאן, האייר וקבוצת אביב."><meta property="og:url" content="https://pro.ai-lab.co.il/"><meta property="og:image" content="https://pro.ai-lab.co.il/og.png"><meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="gem.png" type="image/png">
@@ -53,7 +53,7 @@ body{
   font-family:var(--sans);font-weight:400;line-height:1.65;
   overflow-x:hidden;overflow-x:clip;-webkit-font-smoothing:antialiased;
 }
-html.cur-on body,html.cur-on a,html.cur-on button,html.cur-on summary,html.cur-on .btn,html.cur-on input{cursor:none}
+html.cur-on body,html.cur-on a,html.cur-on button,html.cur-on summary,html.cur-on .btn,html.cur-on input,html.cur-on .meet{cursor:none}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 ::selection{background:var(--acc);color:#0F1A26}
@@ -288,7 +288,7 @@ html.gs .big .w{opacity:.16;transition:none}
   font-variation-settings:"wdth" var(--wd),"wght" 900;direction:ltr;letter-spacing:-.04em;will-change:transform,opacity;white-space:nowrap;
 }
 #bigLbl{font-size:.9rem;color:var(--fg-3)}
-.meet{padding:clamp(30px,4.5vh,50px) 0;border-top:1px solid var(--line)}
+.meet{padding:clamp(30px,4.5vh,50px) 0;border-top:1px solid var(--line);cursor:pointer}
 .meet:last-of-type{border-bottom:1px solid var(--line)}
 .meet .t{display:flex;align-items:baseline;gap:16px;margin-bottom:10px}
 .meet .t .n{font-family:var(--mono);font-size:.68rem;color:var(--acc);letter-spacing:.18em}
@@ -1041,6 +1041,12 @@ window.HERO.word = PROD[cur].word;
 
 (function () {
   const R = window.REDUCE;
+  // כרטיסי הפנייה (השיחה לדוגמה) מובילים לדף הסוכן. ב-Clarity ראו הקשות עליהם בלי תגובה
+  document.addEventListener('click', (e) => {
+    const m = e.target.closest('.meet'); if (!m) return;
+    try { gtag('event', 'cta_click', { cta_section: 'meets' }); } catch (_) {}
+    location.href = '/agent/';
+  });
   if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') { document.documentElement.classList.add('static'); document.querySelectorAll('.hs').forEach((e, i) => { e.style.opacity = i === 2 ? 1 : 0; e.style.visibility = i === 2 ? 'visible' : 'hidden'; }); document.getElementById('year').textContent = new Date().getFullYear(); return; }
   gsap.registerPlugin(ScrollTrigger);
   ScrollTrigger.config({ ignoreMobileResize: true });
@@ -1216,7 +1222,7 @@ window.HERO.word = PROD[cur].word;
     const dot = curEl.querySelector('i'), ring = curEl.querySelector('b');
     const qx = gsap.quickTo(ring, 'x', { duration: .35, ease: 'power3' }), qy = gsap.quickTo(ring, 'y', { duration: .35, ease: 'power3' });
     addEventListener('pointermove', (e) => { curEl.classList.add('ready'); gsap.set(dot, { x: e.clientX, y: e.clientY }); qx(e.clientX); qy(e.clientY); });
-    document.querySelectorAll('a,button,summary,.btn,.chip,input').forEach(el => {
+    document.querySelectorAll('a,button,summary,.btn,.chip,input,.meet').forEach(el => {
       el.addEventListener('pointerenter', () => curEl.classList.add('hov'));
       el.addEventListener('pointerleave', () => curEl.classList.remove('hov'));
     });
