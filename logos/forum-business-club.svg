@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 100" role="img" aria-label="FORUM BUSINESS CLUB">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3dcae"/><stop offset=".45" stop-color="#c9a46a"/><stop offset=".75" stop-color="#9b7743"/><stop offset="1" stop-color="#e5c891"/></linearGradient></defs>
+  <path d="M18 92V20c0-6 4-10 10-10h60v14H34v20h40v14H34v34z" fill="url(#g)"/>
+  <path d="M40 92V56h28v-4H40v-6h0V30h48v-4H36v66z" fill="none" stroke="url(#g)" stroke-width="2.4"/>
+  <text x="112" y="60" textLength="480" lengthAdjust="spacingAndGlyphs" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="42" fill="#c9a46a">FORUM BUSINESS CLUB</text>
+  <text x="114" y="88" textLength="476" lengthAdjust="spacingAndGlyphs" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill="#c9a46a">PEOPLE · IDEAS · OPPORTUNITIES</text>
+</svg>
