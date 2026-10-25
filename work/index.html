@@ -81,7 +81,7 @@ try{const res=await fetch(LEADS_URL,{method:'POST',headers:{'Content-Type':'text
 if(window.gtag)gtag('event','generate_lead',{method:'form',product:PRODUCT,page:location.pathname});ok.classList.add('show');form.reset();btn.textContent='נשלח';setTimeout(()=>{btn.disabled=false;btn.innerHTML=orig},4000)}
 catch(err){btn.disabled=false;btn.innerHTML=orig;if(confirm('השליחה נכשלה. לשלוח במקום זה בוואטסאפ?'))leadWhatsApp()}return false}
 function leadWhatsApp(){const n=(document.getElementById('name').value||'').trim();let m='היי מאיר! '+(n?'אני '+n+', ו':'')+'אשמח לשיחת היכרות על העסק שלי.'+(PRODUCT?' מעניין אותי: '+PRODUCT+'.':'');window.open('https://wa.me/972546500795?text='+encodeURIComponent(m),'_blank')}
-document.querySelectorAll('a[href*="wa.me"]').forEach(a=>a.addEventListener('click',()=>{if(window.gtag)gtag('event','whatsapp_click',{page:location.pathname})}));
+document.querySelectorAll('a[href*="wa.me"]').forEach(a=>a.addEventListener('click',()=>{if(!window.gtag)return;const p={page:location.pathname};if(a.dataset.label){p.label=a.dataset.label;p.product=a.dataset.product||''}gtag('event','whatsapp_click',p)}));
 document.querySelectorAll('a[href="#seat"]').forEach(a=>a.addEventListener('click',()=>{if(window.gtag)gtag('event','cta_click',{page:location.pathname})}));
 </script>
 </main>

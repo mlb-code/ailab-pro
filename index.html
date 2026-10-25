@@ -53,7 +53,7 @@ body{
   font-family:var(--sans);font-weight:400;line-height:1.65;
   overflow-x:hidden;overflow-x:clip;-webkit-font-smoothing:antialiased;
 }
-html.cur-on body,html.cur-on a,html.cur-on button,html.cur-on summary,html.cur-on .btn,html.cur-on input,html.cur-on .meet{cursor:none}
+html.cur-on body,html.cur-on a,html.cur-on button,html.cur-on summary,html.cur-on .btn,html.cur-on input,html.cur-on .meet,html.cur-on .menu li.go,html.cur-on .cases li{cursor:none}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 ::selection{background:var(--acc);color:#0F1A26}
@@ -146,6 +146,10 @@ em{font-style:normal;color:var(--acc)}
 .hs p strong{color:var(--fg);font-weight:500}
 .hs .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
 .hs .fine{font-size:.82rem;color:var(--fg-3);margin-top:14px}
+/* שאלה על המחיר בוואטסאפ, צמוד למחיר של המוצר שנבחר */
+.hs .ask{display:inline-flex;align-items:center;gap:8px;margin-top:8px;font-size:.92rem;font-weight:600;line-height:1.3;color:var(--acc);text-decoration:underline;text-decoration-color:rgba(232,166,74,.45);text-underline-offset:5px;transition:color .25s,text-decoration-color .25s}
+.hs .ask:hover{color:#F2BC63;text-decoration-color:currentColor}
+.hs .ask + .pick{margin-top:14px}
 .pick{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:22px}
 .pick .lbl{font-size:.8rem;color:var(--fg-3);margin-inline-end:4px}
 .chip{background:transparent;border:1px solid var(--line-2);color:var(--fg-2);font:inherit;font-size:.86rem;font-weight:500;padding:9px 14px;line-height:1;border-radius:0;transition:color .25s,border-color .25s,background .25s}
@@ -169,9 +173,11 @@ em{font-style:normal;color:var(--acc)}
   .pick .lbl{width:100%;margin:0 0 2px}
   .chip{border-radius:999px;padding:9px 13px;font-size:.82rem}
   .hint{display:none}
+  .hs .ask{min-height:40px;margin-top:2px;font-size:.9rem}
+  .hs .ask + .pick{margin-top:8px}
 }
 html.static .hero{height:880px}
-@media(min-width:761px) and (max-height:820px){.hs .h.sm{font-size:clamp(1.3rem,2vw,1.8rem)}.hs p{font-size:1rem}.hero-copy{bottom:28px}.pick{margin-top:14px}.hs .ctas{margin-top:14px}}
+@media(min-width:761px) and (max-height:820px){.hs .h.sm{font-size:clamp(1.3rem,2vw,1.8rem)}.hs p{font-size:1rem}.hero-copy{bottom:28px}.pick{margin-top:14px}.hs .ctas{margin-top:14px}.hs .ask{margin-top:6px}.hs .ask + .pick{margin-top:10px}}
 
 /* ============ PRICE STRIP (מתחת להירו) ============ */
 .pstrip{display:grid;grid-template-columns:repeat(5,minmax(0,1fr)) auto;align-items:stretch;border-bottom:1px solid var(--line);padding-inline:var(--gutter)}
@@ -189,8 +195,7 @@ html.static .hero{height:880px}
 .clients .names{display:flex;flex-wrap:wrap;gap:10px 40px;align-items:baseline}
 .clients .names span{font-family:var(--serif);font-weight:700;font-size:clamp(1.15rem,2vw,1.7rem);color:var(--fg-2);font-variation-settings:"wdth" 80,"wght" 700;white-space:nowrap}
 .clients .names span.lat{direction:ltr;unicode-bidi:isolate}
-.clients .names img{display:block;filter:brightness(0) invert(1);opacity:.85;transition:opacity .3s}
-.clients .names img:hover{opacity:1}
+.clients .names img{display:block;filter:brightness(0) invert(1);opacity:.85}
 @media(max-width:760px){.clients .names{gap:14px 26px}.clients .names img{height:22px!important}}
 .clients .note{font-size:.86rem;color:var(--fg-2);margin-inline-start:auto}
 .hs .h.sm{font-size:clamp(1.45rem,2.5vw,2.3rem);margin-bottom:10px;min-height:1.1em}
@@ -206,7 +211,8 @@ html.static .hero{height:880px}
 .menu .price b{font-family:var(--serif);font-weight:700;font-size:clamp(1.8rem,3.4vw,3rem);line-height:1;color:var(--acc);font-variation-settings:"wdth" 70,"wght" 700;direction:ltr;unicode-bidi:isolate;white-space:nowrap}
 .menu .price span{font-size:.78rem;color:var(--fg-3);margin-top:8px;text-align:left}
 .menu li.hl h3,.menu li:hover h3{color:var(--acc)}
-.menu .mlink{border-bottom:1px solid transparent}.menu .mlink:hover{border-bottom-color:var(--acc)}
+.menu .mlink{border-bottom:1px solid transparent}.menu .mlink:hover,.menu li.go:hover .mlink{border-bottom-color:var(--acc)}
+.menu li.go{cursor:pointer}
 .menu-note{margin-top:18px;font-size:.9rem;color:var(--fg-3);max-width:760px}
 
 /* ============ OWN (שלך נשאר שלך) ============ */
@@ -363,6 +369,7 @@ input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;bac
 .cases .n span{display:block;color:var(--fg-3);margin-top:6px;letter-spacing:.1em}
 .cases h3{font-size:clamp(1.4rem,2.3vw,2.1rem);--wd:84;margin-bottom:8px;transition:color .3s}
 .cases li:hover h3{color:var(--acc)}
+.cases li{cursor:pointer}
 .cases p{color:var(--fg-2);font-size:1.02rem;max-width:620px}
 .cases .stack{display:flex;flex-direction:column;gap:6px;align-items:flex-end;font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;color:var(--fg-3);direction:ltr;padding-top:8px}
 @media(max-width:860px){
@@ -671,6 +678,7 @@ html.static body::after,html.static .marq .track,html.static .hint::after,html.s
       <span class="k label acc">AI Lab Pro<span class="k-x"> · אתרים · סוכני AI · אוטומציות · מערכות · אפליקציות · וידאו</span></span>
       <div class="h sm" id="prodH">סוכן AI שעונה ללקוחות שלך, מסנן, וקובע.</div>
       <p id="prodP">בוואטסאפ, באתר או בפנים. כללי הגנה, מסירה לבן אדם כשצריך, חיבור ליומן, ל‑CRM ולגיליון. <strong>14 יום, החל מ‑₪9,900.</strong></p>
+      <a href="https://wa.me/972546500795?text=%D7%94%D7%99%D7%99%20%D7%9E%D7%90%D7%99%D7%A8%2C%20%D7%A8%D7%90%D7%99%D7%AA%D7%99%20%D7%91%D7%90%D7%AA%D7%A8%3A%20%D7%A1%D7%95%D7%9B%D7%9F%20AI%2C%20%D7%94%D7%97%D7%9C%20%D7%9E-%E2%82%AA9%2C900.%20%D7%99%D7%A9%20%D7%9C%D7%99%20%D7%A9%D7%90%D7%9C%D7%94%20%D7%A2%D7%9C%20%D7%94%D7%9E%D7%97%D7%99%D7%A8%20%D7%94%D7%96%D7%94%20%D7%9C%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99." target="_blank" rel="noopener" class="ask" id="prodAsk" data-label="price_question">לשאול על המחיר הזה בוואטסאפ <span aria-hidden="true">←</span></a>
       <div class="pick" role="tablist" aria-label="מה אתה צריך">
         <span class="lbl">מה אתה צריך:</span>
         <button class="chip on" data-k="agent" role="tab">סוכן AI</button>
@@ -802,7 +810,7 @@ html.static body::after,html.static .marq .track,html.static .hint::after,html.s
     </li>
     <li data-k="ops">
       <div class="n">07</div>
-      <div><h3>ליווי חודשי (AI Ops)</h3><p><b>שקט, <span class="num">₪1,900</span>:</b> ניטור, תיקונים כשספק משנה משהו, עד 5 שעות שינויים ודוח חודשי.<br><b>צמיחה, <span class="num">₪4,900</span>:</b> 15 עד 20 שעות, אוטומציה חדשה כל חודש, מענה תוך 24 שעות.<br><b>שותף, <span class="num">₪12,000</span>:</b> בקשה אחת בכל רגע, תור ללא הגבלה, השהיה וביטול בכל עת.</p></div>
+      <div><h3><a href="/pricing/" class="mlink">ליווי חודשי (AI Ops)</a></h3><p><b>שקט, <span class="num">₪1,900</span>:</b> ניטור, תיקונים כשספק משנה משהו, עד 5 שעות שינויים ודוח חודשי.<br><b>צמיחה, <span class="num">₪4,900</span>:</b> 15 עד 20 שעות, אוטומציה חדשה כל חודש, מענה תוך 24 שעות.<br><b>שותף, <span class="num">₪12,000</span>:</b> בקשה אחת בכל רגע, תור ללא הגבלה, השהיה וביטול בכל עת.</p></div>
       <div class="price"><b>₪1,900</b><span>לחודש, החל מ‑</span></div>
     </li>
   </ul>
@@ -875,6 +883,7 @@ html.static body::after,html.static .marq .track,html.static .hint::after,html.s
       <div class="stack"><span>Meta API</span><span>YouTube</span><span>Buffer</span></div>
     </li>
   </ul>
+  <p class="meets-foot"><a href="/work/">הפירוט המלא של ארבעת הפרויקטים ←</a></p>
 </section>
 
 <!-- ================= 07 איך עובדים ================= -->
@@ -1006,13 +1015,12 @@ html.static body::after,html.static .marq .track,html.static .hint::after,html.s
       <h4>עוד</h4>
       <a href="/start/">התחל: שאלון לתהליך שלך</a>
       <a href="https://ai-lab.co.il" target="_blank" rel="noopener">AI Lab לילדים ונוער</a>
-      <a href="#">AI Lab Starter, קורס למבוגרים</a>
-      <a href="#">עוסק מורשה · הצהרת נגישות · פרטיות</a>
+      <a href="https://starter.ai-lab.co.il" target="_blank" rel="noopener">AI Lab Starter, קורס למבוגרים</a>
       <a href="https://www.linkedin.com/in/meirlavi" target="_blank" rel="noopener">LinkedIn</a>
     </div>
   </div>
   <div class="foot-b">
-    <div>© <span id="year"></span> AI Lab · מאיר לביא</div>
+    <div>© <span id="year"></span> AI Lab · מאיר לביא · עוסק מורשה</div>
     <div class="mono">PRO / 2026</div>
   </div>
 </footer>
@@ -1026,12 +1034,12 @@ html.static body::after,html.static .marq .track,html.static .hint::after,html.s
 <script>
 /* ============ מוצרים ============ */
 const PROD = {
-  agent:{name:'סוכן AI',word:'סוכן',h:'סוכן AI שעונה ללקוחות שלך, מסנן, וקובע.',p:'בוואטסאפ, באתר או בפנים. כללי הגנה, מסירה לבן אדם כשצריך, חיבור ליומן, ל‑CRM ולגיליון. <strong>14 יום, החל מ‑₪9,900.</strong>'},
-  auto:{name:'אוטומציה',word:'אוטומציה',h:'העבודה שחוזרת על עצמה, נעשית לבד.',p:'לידים לגיליון אחד, הצעות מחיר ומסמכים שנוצרים לבד, תזכורות, דוח בוקר למנהל. <strong>תהליך אחד ב‑14 יום, החל מ‑₪4,900.</strong>'},
-  system:{name:'מערכת פנימית',word:'מערכת',h:'מערכת פנימית במקום אקסלים ושלוש תוכנות.',p:'בנויה לתהליך שלך, לא לתהליך ממוצע. גרסה עובדת כל שבוע, הקוד בריפו שלך. <strong>30 עד 45 יום, החל מ‑₪29,000.</strong>'},
-  app:{name:'אפליקציה',word:'אפליקציה',h:'אפליקציה ללקוחות שלך או לצוות בשטח.',p:'הרשמה, תשלום, אזור אישי, התראות. מהאפיון לחנות, באותם תנאים של מערכת. <strong>החל מ‑₪34,000.</strong>'},
-  website:{name:'אתר לעסק',word:'אתר',h:'אתר לעסק שלך, באוויר תוך שבוע.',p:'עד 5 עמודים, אנחנו כותבים את הטקסטים, טופס לוואטסאפ ולגיליון, SEO מקומי ופרופיל עסק בגוגל. הדומיין והאתר שלך. <strong>₪2,900, באוויר תוך 7 ימי עסקים.</strong>'},
-  video:{name:'יצירת וידאו',word:'וידאו',h:'סרטון לעסק שלך, בלי צלם ובלי יום צילום.',p:'תדמית, הדרכה, התקנת מוצר או סרטונים קצרים לרשתות. מהחומרים שכבר יש לך, עם תסריט, קריינות בעברית ומוזיקה. <strong>החל מ‑₪1,000.</strong>'},
+  agent:{name:'סוכן AI',word:'סוכן',price:'החל מ-₪9,900',h:'סוכן AI שעונה ללקוחות שלך, מסנן, וקובע.',p:'בוואטסאפ, באתר או בפנים. כללי הגנה, מסירה לבן אדם כשצריך, חיבור ליומן, ל‑CRM ולגיליון. <strong>14 יום, החל מ‑₪9,900.</strong>'},
+  auto:{name:'אוטומציה',word:'אוטומציה',price:'החל מ-₪4,900',h:'העבודה שחוזרת על עצמה, נעשית לבד.',p:'לידים לגיליון אחד, הצעות מחיר ומסמכים שנוצרים לבד, תזכורות, דוח בוקר למנהל. <strong>תהליך אחד ב‑14 יום, החל מ‑₪4,900.</strong>'},
+  system:{name:'מערכת פנימית',word:'מערכת',price:'החל מ-₪29,000',h:'מערכת פנימית במקום אקסלים ושלוש תוכנות.',p:'בנויה לתהליך שלך, לא לתהליך ממוצע. גרסה עובדת כל שבוע, הקוד בריפו שלך. <strong>30 עד 45 יום, החל מ‑₪29,000.</strong>'},
+  app:{name:'אפליקציה',word:'אפליקציה',price:'החל מ-₪34,000',h:'אפליקציה ללקוחות שלך או לצוות בשטח.',p:'הרשמה, תשלום, אזור אישי, התראות. מהאפיון לחנות, באותם תנאים של מערכת. <strong>החל מ‑₪34,000.</strong>'},
+  website:{name:'אתר לעסק',word:'אתר',price:'₪2,900',h:'אתר לעסק שלך, באוויר תוך שבוע.',p:'עד 5 עמודים, אנחנו כותבים את הטקסטים, טופס לוואטסאפ ולגיליון, SEO מקומי ופרופיל עסק בגוגל. הדומיין והאתר שלך. <strong>₪2,900, באוויר תוך 7 ימי עסקים.</strong>'},
+  video:{name:'יצירת וידאו',word:'וידאו',price:'החל מ-₪1,000',h:'סרטון לעסק שלך, בלי צלם ובלי יום צילום.',p:'תדמית, הדרכה, התקנת מוצר או סרטונים קצרים לרשתות. מהחומרים שכבר יש לך, עם תסריט, קריינות בעברית ומוזיקה. <strong>החל מ‑₪1,000.</strong>'},
 };
 window.PROD = PROD;
 const LOG=[['23:12','הודעה נכנסת','"היי, אפשר לקבל פרטים על השירות?"'],['23:12','הסוכן עונה','בשפה שלך, עם המידע הנכון. תוך ארבע שניות.'],['23:13','שאלות הכנה','מה צריך, מתי, איפה. בלי לחפור.'],['23:14','נקבעה שיחה','מחר 10:30. הזמנה ביומן שלך, תזכורת ללקוח.'],['08:00','דוח בוקר','מה נכנס בלילה, מה נקבע, מה דורש אותך.']];
@@ -1051,10 +1059,12 @@ window.HERO.word = PROD[cur].word;
 (function () {
   const R = window.REDUCE;
   // כרטיסי הפנייה (השיחה לדוגמה) מובילים לדף הסוכן. ב-Clarity ראו הקשות עליהם בלי תגובה
+  // כרטיסי הפרויקטים (06) מובילים לדף הפרויקטים, שם כל אחד מפורט. גם עליהם היו הקשות בלי תגובה
   document.addEventListener('click', (e) => {
-    const m = e.target.closest('.meet'); if (!m) return;
-    try { gtag('event', 'cta_click', { cta_section: 'meets' }); } catch (_) {}
-    location.href = '/agent/';
+    const m = e.target.closest('.meet');
+    if (m) { try { gtag('event', 'cta_click', { cta_section: 'meets' }); } catch (_) {} location.href = '/agent/'; return; }
+    const c = e.target.closest('.cases li');
+    if (c && !e.target.closest('a') && !String(getSelection())) { try { gtag('event', 'cta_click', { cta_section: 'cases' }); } catch (_) {} location.href = '/work/'; }
   });
   if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') { document.documentElement.classList.add('static'); document.querySelectorAll('.hs').forEach((e, i) => { e.style.opacity = i === 2 ? 1 : 0; e.style.visibility = i === 2 ? 'visible' : 'hidden'; }); document.getElementById('year').textContent = new Date().getFullYear(); return; }
   gsap.registerPlugin(ScrollTrigger);
@@ -1178,10 +1188,11 @@ window.HERO.word = PROD[cur].word;
   calc();
 
   // ---- בחירת מוצר ----
-  const prodH = document.getElementById('prodH'), prodP = document.getElementById('prodP');
+  const prodH = document.getElementById('prodH'), prodP = document.getElementById('prodP'), prodAsk = document.getElementById('prodAsk');
   function setProduct(k, first) {
     cur = k; document.documentElement.setAttribute('data-product', k);
     const d = PROD[k];
+    if (prodAsk) prodAsk.href = 'https://wa.me/972546500795?text=' + encodeURIComponent('היי מאיר, ראיתי באתר: ' + d.name + ', ' + d.price + '. יש לי שאלה על המחיר הזה לעסק שלי.');
     document.querySelectorAll('.chip').forEach(b => b.classList.toggle('on', b.dataset.k === k));
     document.querySelectorAll('#menu li').forEach(li => { li.classList.toggle('hl', li.dataset.k === k); if (SMALL) li.classList.toggle('open', li.dataset.k === k); });
     const put = () => { prodH.textContent = d.h; prodP.innerHTML = d.p; };
@@ -1199,12 +1210,16 @@ window.HERO.word = PROD[cur].word;
     document.querySelectorAll('.own > div').forEach(d => d.addEventListener('click', () => { d.classList.toggle('open'); }));
     const cm = document.getElementById('calcMore'); const calcEl = document.querySelector('.calc');
     if (cm && calcEl) { cm.style.display = 'inline-flex'; cm.addEventListener('click', () => { calcEl.classList.add('more'); ScrollTrigger.refresh(); }); }
+  } else {
+    // דסקטופ: כל השורה בתפריט (גם המחיר) מובילה לדף המוצר. ב-Clarity היו הקלקות על השורה בלי תגובה
+    document.querySelectorAll('#menu li').forEach(li => { const a = li.querySelector('a.mlink'); if (!a) return; li.classList.add('go');
+      li.addEventListener('click', (e) => { if (e.target.closest('a') || String(getSelection())) return; location.href = a.getAttribute('href'); }); });
   }
 
 
   // ---- מדידה: אירועי GA4 ----
   const ev = (name, params) => { if (window.gtag) gtag('event', name, params || {}); };
-  document.querySelectorAll('a[href*="wa.me"]').forEach(a => a.addEventListener('click', () => ev('whatsapp_click', { location: a.closest('section,header,nav,footer')?.id || a.closest('header,nav,footer')?.className || 'page' })));
+  document.querySelectorAll('a[href*="wa.me"]').forEach(a => a.addEventListener('click', () => ev('whatsapp_click', Object.assign({ location: a.closest('section,header,nav,footer')?.id || a.closest('header,nav,footer')?.className || 'page' }, a.dataset.label ? { label: a.dataset.label, product: cur } : {}))));
   document.querySelectorAll('a[href="#seat"]').forEach(a => a.addEventListener('click', () => ev('cta_click', { location: a.closest('section,header,nav')?.id || 'nav' })));
   document.querySelectorAll('.chip').forEach(b => b.addEventListener('click', () => ev('select_product', { product: b.dataset.k })));
   let calcSent = false; [rl, rm, rv].forEach(r => r.addEventListener('input', () => { if (!calcSent) { calcSent = true; ev('calculator_use', {}); } }));
@@ -1231,7 +1246,8 @@ window.HERO.word = PROD[cur].word;
     const dot = curEl.querySelector('i'), ring = curEl.querySelector('b');
     const qx = gsap.quickTo(ring, 'x', { duration: .35, ease: 'power3' }), qy = gsap.quickTo(ring, 'y', { duration: .35, ease: 'power3' });
     addEventListener('pointermove', (e) => { curEl.classList.add('ready'); gsap.set(dot, { x: e.clientX, y: e.clientY }); qx(e.clientX); qy(e.clientY); });
-    document.querySelectorAll('a,button,summary,.btn,.chip,input,.meet').forEach(el => {
+    document.querySelectorAll('a,button,summary,.btn,.chip,input,.meet,.menu li.go,.cases li').forEach(el => {
+      if (el.matches('.menu li.go a')) return; // השורה כולה כבר מסומנת
       el.addEventListener('pointerenter', () => curEl.classList.add('hov'));
       el.addEventListener('pointerleave', () => curEl.classList.remove('hov'));
     });
@@ -1319,7 +1335,7 @@ import * as THREE from 'three';
     return out;
   }
   const shortScreen = () => !isMobile && H < 820;
-  const wordY = () => isMobile ? H * 0.19 : (shortScreen() ? H * 0.27 : H * 0.34);
+  const wordY = () => isMobile ? H * 0.19 : (shortScreen() ? H * 0.27 : H * 0.32); // 0.32 (היה 0.34): מקום לשורת "לשאול על המחיר" בלי שהמילה תיגע בטקסט
   const frac = () => isMobile ? 0.86 : (shortScreen() ? 0.5 : 0.64);
   const geo = new THREE.BufferGeometry();
   const rand = new Float32Array(N * 3), seed = new Float32Array(N);
