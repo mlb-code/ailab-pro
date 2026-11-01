@@ -14,6 +14,7 @@
 - סוכן AI (וואטסאפ/אתר/פנימי): החל מ-₪9,900, 14 יום. https://pro.ai-lab.co.il/agent/
 - מערכת פנימית בהתאמה אישית: החל מ-₪29,000, 30 עד 45 יום. https://pro.ai-lab.co.il/system/
 - אפליקציה ללקוחות או לצוות: החל מ-₪34,000. https://pro.ai-lab.co.il/app/
+- הדרכת AI לעסקים (הדרכה פרטית לבעל עסק או למנהל, הדרכה קבוצתית לצוות, או קורס שמותאם אישית למשרד; פרונטלי או בזום): אין מחירון קבוע, המחיר לפי מספר המשתתפים והיקף ההדרכה. https://pro.ai-lab.co.il/training/
 - ליווי חודשי (AI Ops): שקט ₪1,900 / צמיחה ₪4,900 / שותף ₪12,000 לחודש, חודש-בחודש. https://pro.ai-lab.co.il/pricing/
 
 ## שימושים נפוצים
@@ -32,6 +33,15 @@
 - https://pro.ai-lab.co.il/pricing/ מחירים
 - https://pro.ai-lab.co.il/work/ פרויקטים שרצים היום
 - https://pro.ai-lab.co.il/about/ מי בונה (מאיר לביא)
+- https://pro.ai-lab.co.il/blog/ בלוג
+
+## מאמרים
+- https://pro.ai-lab.co.il/blog/automation-for-business/ אוטומציה לעסק: מה כדאי לאוטומט קודם, דוגמאות ועלות
+- https://pro.ai-lab.co.il/blog/what-is-ai-agent/ סוכן AI: מה זה, במה הוא שונה מצ'אטבוט, ומתי עסק לא צריך אחד
+- https://pro.ai-lab.co.il/blog/ai-for-small-business/ בינה מלאכותית לעסקים: איך עסק קטן מתחיל
+- https://pro.ai-lab.co.il/blog/ai-course-for-managers/ קורס AI למנהלים: איך בוחרים הדרכה למנהלים ולעובדים
+- https://pro.ai-lab.co.il/blog/website-for-business-cost/ בניית אתר לעסק: כמה זה עולה ב-2026 ומה לבדוק
+- https://pro.ai-lab.co.il/blog/whatsapp-bot-price-israel/ כמה עולה בוט וואטסאפ לעסק בישראל
 
 ## קשור
 - AI Lab לילדים ונוער: https://ai-lab.co.il
