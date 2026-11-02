@@ -191,13 +191,25 @@ html.static .hero{height:880px}
 @media(max-width:760px){.pstrip{grid-template-columns:1fr 1fr;margin:0 12px;padding:16px 16px 4px;background:var(--bg-2);border:1px solid var(--line);border-radius:24px 24px 0 0;border-bottom:0}.pstrip .pst-k{display:block;grid-column:1/-1;font-size:.74rem;font-weight:600;letter-spacing:.06em;color:var(--acc);padding:0 10px 6px}.pstrip a{padding:14px 10px;border-inline-start:0;border-bottom:1px solid var(--line)}.pstrip a:nth-of-type(even){border-inline-start:1px solid var(--line);padding-inline-start:12px}.pstrip a:first-of-type{padding-inline-start:10px}.pstrip .all{grid-column:auto;border-bottom:0;padding:14px 10px 14px 12px;align-items:center}.pstrip a:nth-last-of-type(2){border-bottom:0}.pstrip b{font-size:1.25rem}.pstrip span{font-size:.8rem}}
 
 /* ============ CLIENTS STRIP ============ */
-.clients{display:flex;flex-wrap:wrap;align-items:center;gap:14px 34px;padding:26px var(--gutter);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.clients .names{display:flex;flex-wrap:wrap;gap:10px 40px;align-items:baseline}
-.clients .names span{font-family:var(--serif);font-weight:700;font-size:clamp(1.15rem,2vw,1.7rem);color:var(--fg-2);font-variation-settings:"wdth" 80,"wght" 700;white-space:nowrap}
-.clients .names span.lat{direction:ltr;unicode-bidi:isolate}
-.clients .names img{display:block;filter:brightness(0) invert(1);opacity:.85}
-@media(max-width:760px){.clients .names{gap:14px 26px}.clients .names img{height:22px!important}}
-.clients .note{font-size:.86rem;color:var(--fg-2);margin-inline-start:auto}
+.clients{padding:clamp(34px,5vw,64px) var(--gutter);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cl-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 24px;margin-bottom:clamp(18px,2.4vw,28px)}
+.cl-head .cl-k{font-size:.78rem;font-weight:600;letter-spacing:.06em;color:var(--acc)}
+.cl-head h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.35rem,2.4vw,2rem);line-height:1.25;margin:6px 0 0;color:var(--fg)}
+.cl-head .note{font-size:.88rem;color:var(--fg-2);margin:0;max-width:34ch}
+.cl-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:22px;overflow:hidden}
+.cl-grid li{position:relative;display:flex;align-items:center;justify-content:center;height:clamp(104px,10vw,138px);padding:0 18px;background:var(--bg);transition:background .45s var(--ease)}
+.cl-grid li::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 70% at 50% 50%,rgba(232,166,74,.13),transparent 70%);opacity:0;transition:opacity .45s var(--ease)}
+.cl-grid img{position:relative;display:block;height:var(--h,34px);width:auto;max-width:82%;object-fit:contain;filter:brightness(0) invert(1);opacity:.72;transition:opacity .45s var(--ease),transform .45s var(--ease)}
+.cl-grid li:hover{background:var(--bg-2)}
+.cl-grid li:hover::before{opacity:1}
+.cl-grid li:hover img{opacity:1;transform:scale(1.04)}
+@media(max-width:760px){
+  .clients{padding:30px 16px}
+  .cl-head{flex-direction:column;gap:6px}
+  .cl-grid{grid-template-columns:repeat(2,1fr);border-radius:18px}
+  .cl-grid li{height:92px;padding:0 12px}
+  .cl-grid img{height:calc(var(--h,34px)*.74);opacity:.82}
+}
 .hs .h.sm{font-size:clamp(1.45rem,2.5vw,2.3rem);margin-bottom:10px;min-height:1.1em}
 
 /* ============ MENU (מה בונים) ============ */
@@ -232,8 +244,6 @@ html.static .hero{height:880px}
   .menu .price span{text-align:right}
   .own{grid-template-columns:1fr}
   .own > div,.own > div:nth-child(odd),.own > div:nth-child(even){border-inline-end:0;padding:24px 0}
-  .clients{padding:20px 18px}
-  .clients .note{margin-inline-start:0}
 }
 
 /* ============ CHAPTERS ============ */
@@ -612,9 +622,6 @@ html.static .mbar{display:none}
   .pick .chip:last-of-type:nth-of-type(odd){grid-column:1/-1}
   .pick .lbl{grid-column:1/-1;margin:0 0 2px}
   .k-x{display:none}
-  .clients .names img[alt=Samsung]{height:16px!important}
-  .clients .names img[alt="Aviv Urban"]{height:30px!important}
-  .clients .names img[alt="ניופרו"]{height:32px!important}
   .cases p{-webkit-line-clamp:4}
   .menu .price span,.cases .n span,.mb span{font-size:.72rem}
   .nav .logo small,.foot .brand small{font-size:.66rem}
@@ -708,11 +715,23 @@ html.static body::after,html.static .marq .track,html.static .hint::after,html.s
   <a href="/system/"><b class="num">₪29,000</b><span>מערכת פנימית</span></a>
   <a href="/pricing/" class="all">כל המחירים ←</a>
 </div>
-<div class="clients" aria-label="לקוחות">
-  <span class="label">בונה היום עבור</span>
-  <div class="names"><img src="logos/Samsung_wordmark.svg" alt="Samsung" style="height:24px"><img src="logos/newpan.svg" alt="ניופאן" style="height:30px"><img src="logos/newpro.png" alt="ניופרו" style="height:48px"><img src="logos/Haier_logo.svg" alt="Haier" style="height:30px"><img src="logos/aviv-logo-black.png" alt="Aviv Urban" style="height:36px"><img src="logos/amram-dan-sadikov.png" alt="עמרם, דן, סדיקוב ושות׳" style="height:38px"><img src="logos/dan-sadikov-group.png" alt="Dan Sadikov" style="height:34px"><img src="logos/forum-business-club.svg" alt="FORUM BUSINESS CLUB" style="height:34px"></div>
-  <span class="note">בונים אצלנו אפליקציות, סוכנים, אוטומציות, סרטוני וידאו ועוד.</span>
-</div>
+<section class="clients" aria-label="לקוחות">
+  <div class="cl-head">
+    <div><span class="cl-k">בונה היום עבור</span>
+    <h2>עסקים שכבר עובדים איתנו</h2></div>
+    <p class="note">בונים אצלנו אפליקציות, סוכנים, אוטומציות, סרטוני וידאו ועוד.</p>
+  </div>
+  <ul class="cl-grid">
+    <li><img src="logos/Samsung_wordmark.svg" alt="Samsung" style="--h:22px" loading="lazy" decoding="async"></li>
+    <li><img src="logos/newpan.svg" alt="ניופאן" style="--h:34px" loading="lazy" decoding="async"></li>
+    <li><img src="logos/newpro.png" alt="ניופרו" style="--h:56px" loading="lazy" decoding="async"></li>
+    <li><img src="logos/Haier_logo.svg" alt="Haier" style="--h:34px" loading="lazy" decoding="async"></li>
+    <li><img src="logos/aviv-logo-black.png" alt="Aviv Urban" style="--h:44px" loading="lazy" decoding="async"></li>
+    <li><img src="logos/amram-dan-sadikov.png" alt="עמרם, דן, סדיקוב ושות׳" style="--h:64px" loading="lazy" decoding="async"></li>
+    <li><img src="logos/dan-sadikov-group.png" alt="Dan Sadikov" style="--h:40px" loading="lazy" decoding="async"></li>
+    <li><img src="logos/forum-business-club.svg" alt="FORUM BUSINESS CLUB" style="--h:44px" loading="lazy" decoding="async"></li>
+  </ul>
+</section>
 
 <!-- ================= 02 ההבדל ================= -->
 <section class="ch wrap" id="diff">
@@ -1243,6 +1262,9 @@ window.HERO.word = PROD[cur].word;
     gsap.fromTo(el, { opacity: 0, y: TOUCH ? 16 : 28 }, { opacity: 1, y: 0, duration: TOUCH ? .7 : 1.1, ease: 'power3.out',
       scrollTrigger: { trigger: el, start: 'top 86%', once: true, onEnter: () => el.classList.add('in') } });
   });
+
+  if (!R) gsap.fromTo('.cl-grid li', { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: .8, ease: 'power3.out', stagger: .07,
+    scrollTrigger: { trigger: '.cl-grid', start: 'top 88%', once: true } });
 
   // ---- cursor + magnetic ----
   const fine = matchMedia('(pointer:fine)').matches && innerWidth > 760;
