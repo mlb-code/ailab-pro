@@ -638,6 +638,37 @@ html.static .mbar{display:none}
   .hint::after,.seat .status i,.marq .track{animation:none}
 }
 html.static body::after,html.static .marq .track,html.static .hint::after,html.static .seat .status i{animation:none}
+
+/* ===== המרה לוואטסאפ (09.11.2026): הצעה בהירו, בר דביק, טופס ===== */
+.offer{display:flex;align-items:center;gap:12px;margin-top:20px;max-width:560px;padding:12px 14px;border:1px solid var(--line);border-radius:18px;background:rgba(239,231,216,.04);text-align:start}
+.offer .av{width:46px;height:46px;border-radius:50%;object-fit:cover;flex:none;border:1px solid var(--line-2)}
+.offer p,.hs .offer p{margin:0;max-width:none;font-size:.98rem;line-height:1.45;color:var(--fg-2);font-weight:300}
+.offer p b{color:var(--fg);font-weight:600}
+.offer p .by{display:block;font-size:.78rem;color:var(--acc);margin-top:3px;font-weight:600}
+.offer + .ctas{margin-top:16px}
+.wabar{position:fixed;z-index:860;display:flex;align-items:center;justify-content:center;gap:10px;font-weight:700;color:#0F1A26;background:var(--acc);text-decoration:none;opacity:0;visibility:hidden;transition:opacity .3s,transform .3s,visibility .3s;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.wabar svg{width:22px;height:22px;fill:currentColor;flex:none}
+.wabar.on{opacity:1;visibility:visible;transform:none}
+@media(max-width:760px){.wabar{left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom));min-height:52px;padding:0 18px;border-radius:999px;font-size:.98rem;transform:translateY(130%)}}
+@media(min-width:761px){.wabar{left:22px;bottom:22px;height:54px;min-width:54px;padding:0 16px;gap:0;border-radius:999px;transform:translateY(16px)}.wabar span{max-width:0;overflow:hidden;white-space:nowrap;transition:max-width .35s,margin .35s}.wabar:hover span,.wabar:focus-visible span{max-width:320px;margin-inline-start:10px}}
+@media(prefers-reduced-motion:reduce){.wabar{transition:none}}
+.form .more{margin:2px 0 14px}
+.form .more summary{cursor:pointer;font-size:.84rem;color:var(--fg-3);list-style:none;padding:6px 0}
+.form .more summary::-webkit-details-marker{display:none}
+.form .more summary::before{content:"+ "}
+.form .more[open] summary::before{content:"− "}
+.form .more .field{margin-top:10px}
+.form .ok,.form .err{text-align:center}
+.form .ok a,.form .err a{display:inline-block;margin-top:10px;padding:10px 18px;border-radius:999px;font-weight:700;background:var(--acc);color:#0F1A26;border:0}
+.form .err{display:none;margin-top:14px;padding:14px;border:1px solid #e57373;color:#f3b0b0;font-weight:500;border-radius:12px}
+.form .err.show{display:block}
+.seat .how-k{display:block;margin-top:22px;font-size:.78rem;font-weight:700;letter-spacing:.06em;color:var(--fg-2)}
+.seat .how-k + ol{margin-top:8px}
+.menu .ask-w{display:block;margin-top:10px}
+.menu .ask{font-size:.88rem;font-weight:600;color:var(--acc);text-decoration:underline;text-decoration-color:rgba(232,166,74,.45);text-underline-offset:5px}
+.menu .ask:hover{color:#F2BC63;text-decoration-color:currentColor}
+.menu-note b{color:var(--fg-2);font-weight:600}
+@media(max-width:760px){.menu .ask{display:inline-flex;align-items:center;min-height:40px}.hs .offer{margin-top:14px;padding:10px 12px}.hs .offer p{font-size:.9rem}.hs .offer + .ctas{margin-top:12px}}
 </style>
 </head>
 <body>
@@ -664,8 +695,8 @@ html.static body::after,html.static .marq .track,html.static .hint::after,html.s
     <a href="/pricing/">מחירים</a>
     <a href="/work/">פרויקטים</a>
     <a href="/start/">התחל</a>
-    <a href="https://wa.me/972546500795?text=%D7%94%D7%99%D7%99%20%D7%9E%D7%90%D7%99%D7%A8%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%93%D7%91%D7%A8%20%D7%A2%D7%9C%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99" target="_blank" rel="noopener">וואטסאפ</a>
-    <a href="#seat" class="cta">שיחת היכרות</a>
+    <a href="https://wa.me/972546500795?text=%D7%94%D7%99%D7%99%20%D7%9E%D7%90%D7%99%D7%A8%2C%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99%3A%20" target="_blank" rel="noopener">וואטסאפ</a>
+    <a href="#seat" class="cta">בוא נדבר</a>
   </div>
 </header>
 
@@ -678,7 +709,8 @@ html.static body::after,html.static .marq .track,html.static .hint::after,html.s
       <span class="k label">פנייה נכנסת. 23:40 בלילה.</span>
       <h1>הפניות לא מחכות לשעות הפעילות.</h1>
       <p>וואטסאפ, טופס, טלפון. בלילה, בשבת, באמצע פגישה. ומי שלא נענה תוך דקות, כבר כתב למישהו אחר.</p>
-      <div class="ctas"><a href="#seat" class="btn acc">לקבוע שיחת היכרות <span class="ar">←</span></a><a href="/pricing/" class="btn">מחירים</a></div>
+      <div class="offer"><img src="meir-sm.jpg" alt="מאיר לביא" width="46" height="46" class="av"><p><b>כתוב לי במילה אחת מה העסק שלך,</b> ואחזור אליך עם 3 רעיונות קונקרטיים ל‑AI אצלך.<span class="by">מאיר לביא, עונה אישית</span></p></div>
+      <div class="ctas"><a href="https://wa.me/972546500795?text=%D7%94%D7%99%D7%99%20%D7%9E%D7%90%D7%99%D7%A8%2C%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99%3A%20" target="_blank" rel="noopener" class="btn acc" data-cta="hero">שלח לי מה העסק שלך <span class="ar">←</span></a><a href="/pricing/" class="btn">מחירים</a></div>
     </div>
     <div class="hs" id="hs2">
       <span class="k label acc">08:00 בבוקר.</span>
@@ -689,7 +721,6 @@ html.static body::after,html.static .marq .track,html.static .hint::after,html.s
       <span class="k label acc">AI Lab Pro<span class="k-x"> · אתרים · סוכני AI · אוטומציות · מערכות · אפליקציות · וידאו</span></span>
       <div class="h sm" id="prodH">סוכן AI שעונה ללקוחות שלך, מסנן, וקובע.</div>
       <p id="prodP">בוואטסאפ, באתר או בפנים. כללי הגנה, מסירה לבן אדם כשצריך, חיבור ליומן, ל‑CRM ולגיליון. <strong>14 יום, החל מ‑₪9,900.</strong></p>
-      <a href="https://wa.me/972546500795?text=%D7%94%D7%99%D7%99%20%D7%9E%D7%90%D7%99%D7%A8%2C%20%D7%A8%D7%90%D7%99%D7%AA%D7%99%20%D7%91%D7%90%D7%AA%D7%A8%3A%20%D7%A1%D7%95%D7%9B%D7%9F%20AI%2C%20%D7%94%D7%97%D7%9C%20%D7%9E-%E2%82%AA9%2C900.%20%D7%99%D7%A9%20%D7%9C%D7%99%20%D7%A9%D7%90%D7%9C%D7%94%20%D7%A2%D7%9C%20%D7%94%D7%9E%D7%97%D7%99%D7%A8%20%D7%94%D7%96%D7%94%20%D7%9C%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99." target="_blank" rel="noopener" class="ask" id="prodAsk" data-label="price_question">לשאול על המחיר הזה בוואטסאפ <span aria-hidden="true">←</span></a>
       <div class="pick" role="tablist" aria-label="מה אתה צריך">
         <span class="lbl">מה אתה צריך:</span>
         <button class="chip on" data-k="agent" role="tab">סוכן AI</button>
@@ -699,11 +730,12 @@ html.static body::after,html.static .marq .track,html.static .hint::after,html.s
         <button class="chip" data-k="website" role="tab">אתר לעסק</button>
         <button class="chip" data-k="video" role="tab">וידאו</button>
       </div>
+      <div class="offer"><img src="meir-sm.jpg" alt="מאיר לביא" width="46" height="46" class="av"><p><b>כתוב לי במילה אחת מה העסק שלך,</b> ואחזור אליך עם 3 רעיונות קונקרטיים ל‑AI אצלך.<span class="by">מאיר לביא, עונה אישית</span></p></div>
       <div class="ctas">
-        <a href="#seat" class="btn acc">לקבוע שיחת היכרות <span class="ar">←</span></a>
-        <a href="https://wa.me/972546500795?text=%D7%94%D7%99%D7%99%20%D7%9E%D7%90%D7%99%D7%A8%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%93%D7%91%D7%A8%20%D7%A2%D7%9C%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99" target="_blank" rel="noopener" class="btn">וואטסאפ</a>
+        <a href="https://wa.me/972546500795?text=%D7%94%D7%99%D7%99%20%D7%9E%D7%90%D7%99%D7%A8%2C%20%D7%A8%D7%90%D7%99%D7%AA%D7%99%20%D7%91%D7%90%D7%AA%D7%A8%3A%20%D7%A1%D7%95%D7%9B%D7%9F%20AI%2C%20%D7%94%D7%97%D7%9C%20%D7%9E-%E2%82%AA9%2C900.%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99%3A%20" target="_blank" rel="noopener" class="btn acc" id="heroWa" data-cta="hero" data-product="agent">שלח לי מה העסק שלך <span class="ar">←</span></a>
+        <a href="/pricing/" class="btn">מחירים</a>
       </div>
-      <p class="fine">30 דקות, חינם. בונה היום לסמסונג, ניופאן, האייר וקבוצת אביב.</p>
+      <p class="fine">בונה היום לסמסונג, ניופאן, האייר וקבוצת אביב.</p>
     </div>
   </div>
   <div class="hint" id="hint">גלול</div>
@@ -798,51 +830,51 @@ html.static body::after,html.static .marq .track,html.static .hint::after,html.s
   <ul class="menu" id="menu">
     <li data-k="website">
       <div class="n">00</div>
-      <div><h3><a href="/website/" class="mlink">אתר לעסק</a></h3><p>עד 5 עמודים, <b>ואנחנו כותבים את הטקסטים.</b> טופס לוואטסאפ ולגיליון, SEO מקומי ופרופיל עסק בגוגל. טיוטה תוך 3 ימי עסקים, באוויר תוך 7. הדומיין והאתר שלך.</p></div>
+      <div><h3><a href="/website/" class="mlink">אתר לעסק</a></h3><p>עד 5 עמודים, <b>ואנחנו כותבים את הטקסטים.</b> טופס לוואטסאפ ולגיליון, SEO מקומי ופרופיל עסק בגוגל. טיוטה תוך 3 ימי עסקים, באוויר תוך 7. הדומיין והאתר שלך.<span class="ask-w"><a href="https://wa.me/972546500795?text=%D7%94%D7%99%D7%99%20%D7%9E%D7%90%D7%99%D7%A8%2C%20%D7%A8%D7%90%D7%99%D7%AA%D7%99%20%D7%91%D7%90%D7%AA%D7%A8%3A%20%D7%90%D7%AA%D7%A8%20%D7%9C%D7%A2%D7%A1%D7%A7%2C%20%E2%82%AA2%2C900.%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99%3A%20" target="_blank" rel="noopener" class="ask" data-cta="menu" data-product="website">לשאול על זה בוואטסאפ ←</a></span></p></div>
       <div class="price"><b>₪2,900</b><span>הקמה · השקה ₪2,500</span></div>
     </li>
     <li data-k="video">
       <div class="n">01</div>
-      <div><h3><a href="/video/" class="mlink">יצירת וידאו</a></h3><p>סרטון לרשתות, תדמית, הדרכה או התקנת מוצר. <b>בלי צלם, מהחומרים שכבר יש לך.</b> תסריט לאישור, קריינות בעברית, מוזיקה, כתוביות ושני פורמטים.</p></div>
+      <div><h3><a href="/video/" class="mlink">יצירת וידאו</a></h3><p>סרטון לרשתות, תדמית, הדרכה או התקנת מוצר. <b>בלי צלם, מהחומרים שכבר יש לך.</b> תסריט לאישור, קריינות בעברית, מוזיקה, כתוביות ושני פורמטים.<span class="ask-w"><a href="https://wa.me/972546500795?text=%D7%94%D7%99%D7%99%20%D7%9E%D7%90%D7%99%D7%A8%2C%20%D7%A8%D7%90%D7%99%D7%AA%D7%99%20%D7%91%D7%90%D7%AA%D7%A8%3A%20%D7%99%D7%A6%D7%99%D7%A8%D7%AA%20%D7%95%D7%99%D7%93%D7%90%D7%95%2C%20%D7%94%D7%97%D7%9C%20%D7%9E-%E2%82%AA1%2C000.%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99%3A%20" target="_blank" rel="noopener" class="ask" data-cta="menu" data-product="video">לשאול על זה בוואטסאפ ←</a></span></p></div>
       <div class="price"><b>₪1,000</b><span>החל מ‑</span></div>
     </li>
     <li data-k="map">
       <div class="n">02</div>
-      <div><h3><a href="/mapping/" class="mlink">מיפוי AI</a></h3><p>שבוע. 3 עד 5 תהליכים עם הערכת חיסכון, <b>ואב‑טיפוס עובד של אחד מהם על הנתונים שלך.</b> יוצאים עם מסמך אפיון והצעת מחיר קבועה.</p></div>
+      <div><h3><a href="/mapping/" class="mlink">מיפוי AI</a></h3><p>שבוע. 3 עד 5 תהליכים עם הערכת חיסכון, <b>ואב‑טיפוס עובד של אחד מהם על הנתונים שלך.</b> יוצאים עם מסמך אפיון והצעת מחיר קבועה.<span class="ask-w"><a href="https://wa.me/972546500795?text=%D7%94%D7%99%D7%99%20%D7%9E%D7%90%D7%99%D7%A8%2C%20%D7%A8%D7%90%D7%99%D7%AA%D7%99%20%D7%91%D7%90%D7%AA%D7%A8%3A%20%D7%9E%D7%99%D7%A4%D7%95%D7%99%20AI%2C%20%E2%82%AA4%2C900.%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99%3A%20" target="_blank" rel="noopener" class="ask" data-cta="menu" data-product="mapping">לשאול על זה בוואטסאפ ←</a></span></p></div>
       <div class="price"><b>₪4,900</b><span>מזוכה במלואו בבנייה</span></div>
     </li>
     <li data-k="auto">
       <div class="n">03</div>
-      <div><h3><a href="/automation/" class="mlink">אוטומציה ב‑14 יום</a></h3><p>תהליך אחד שחוזר על עצמו: לידים, מסמכים, דוחות, תזכורות. חיבור לשתי מערכות, לוח בקרה, תיעוד, 30 יום אחריות.</p></div>
+      <div><h3><a href="/automation/" class="mlink">אוטומציה ב‑14 יום</a></h3><p>תהליך אחד שחוזר על עצמו: לידים, מסמכים, דוחות, תזכורות. חיבור לשתי מערכות, לוח בקרה, תיעוד, 30 יום אחריות.<span class="ask-w"><a href="https://wa.me/972546500795?text=%D7%94%D7%99%D7%99%20%D7%9E%D7%90%D7%99%D7%A8%2C%20%D7%A8%D7%90%D7%99%D7%AA%D7%99%20%D7%91%D7%90%D7%AA%D7%A8%3A%20%D7%90%D7%95%D7%98%D7%95%D7%9E%D7%A6%D7%99%D7%94%20%D7%91-14%20%D7%99%D7%95%D7%9D%2C%20%D7%94%D7%97%D7%9C%20%D7%9E-%E2%82%AA4%2C900.%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99%3A%20" target="_blank" rel="noopener" class="ask" data-cta="menu" data-product="automation">לשאול על זה בוואטסאפ ←</a></span></p></div>
       <div class="price"><b>₪4,900</b><span>החל מ‑</span></div>
     </li>
     <li data-k="agent">
       <div class="n">04</div>
-      <div><h3><a href="/agent/" class="mlink">סוכן AI</a></h3><p>בוואטסאפ, באתר או בפנים. עונה, מסנן, קובע. כללי הגנה, מסירה לבן אדם, חיבור ליומן, ל‑CRM ולגיליון. הדרכה ו‑30 יום אחריות.</p></div>
+      <div><h3><a href="/agent/" class="mlink">סוכן AI</a></h3><p>בוואטסאפ, באתר או בפנים. עונה, מסנן, קובע. כללי הגנה, מסירה לבן אדם, חיבור ליומן, ל‑CRM ולגיליון. הדרכה ו‑30 יום אחריות.<span class="ask-w"><a href="https://wa.me/972546500795?text=%D7%94%D7%99%D7%99%20%D7%9E%D7%90%D7%99%D7%A8%2C%20%D7%A8%D7%90%D7%99%D7%AA%D7%99%20%D7%91%D7%90%D7%AA%D7%A8%3A%20%D7%A1%D7%95%D7%9B%D7%9F%20AI%2C%20%D7%94%D7%97%D7%9C%20%D7%9E-%E2%82%AA9%2C900.%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99%3A%20" target="_blank" rel="noopener" class="ask" data-cta="menu" data-product="agent">לשאול על זה בוואטסאפ ←</a></span></p></div>
       <div class="price"><b>₪9,900</b><span>החל מ‑</span></div>
     </li>
     <li data-k="system">
       <div class="n">05</div>
-      <div><h3><a href="/system/" class="mlink">מערכת פנימית ב‑30 עד 45 יום</a></h3><p>במקום אקסלים ושלוש תוכנות. בנויה לתהליך שלך. תשלום 40/40/20, גרסה עובדת כל שבוע, הקוד בריפו שלך, 60 יום אחריות.</p></div>
+      <div><h3><a href="/system/" class="mlink">מערכת פנימית ב‑30 עד 45 יום</a></h3><p>במקום אקסלים ושלוש תוכנות. בנויה לתהליך שלך. תשלום 40/40/20, גרסה עובדת כל שבוע, הקוד בריפו שלך, 60 יום אחריות.<span class="ask-w"><a href="https://wa.me/972546500795?text=%D7%94%D7%99%D7%99%20%D7%9E%D7%90%D7%99%D7%A8%2C%20%D7%A8%D7%90%D7%99%D7%AA%D7%99%20%D7%91%D7%90%D7%AA%D7%A8%3A%20%D7%9E%D7%A2%D7%A8%D7%9B%D7%AA%20%D7%A4%D7%A0%D7%99%D7%9E%D7%99%D7%AA%2C%20%D7%94%D7%97%D7%9C%20%D7%9E-%E2%82%AA29%2C000.%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99%3A%20" target="_blank" rel="noopener" class="ask" data-cta="menu" data-product="system">לשאול על זה בוואטסאפ ←</a></span></p></div>
       <div class="price"><b>₪29,000</b><span>החל מ‑</span></div>
     </li>
     <li data-k="app">
       <div class="n">06</div>
-      <div><h3><a href="/app/" class="mlink">אפליקציה</a></h3><p>ללקוחות שלך או לצוות בשטח. הרשמה, תשלום, אזור אישי, התראות. מהאפיון לחנות, באותם תנאים של מערכת.</p></div>
+      <div><h3><a href="/app/" class="mlink">אפליקציה</a></h3><p>ללקוחות שלך או לצוות בשטח. הרשמה, תשלום, אזור אישי, התראות. מהאפיון לחנות, באותם תנאים של מערכת.<span class="ask-w"><a href="https://wa.me/972546500795?text=%D7%94%D7%99%D7%99%20%D7%9E%D7%90%D7%99%D7%A8%2C%20%D7%A8%D7%90%D7%99%D7%AA%D7%99%20%D7%91%D7%90%D7%AA%D7%A8%3A%20%D7%90%D7%A4%D7%9C%D7%99%D7%A7%D7%A6%D7%99%D7%94%2C%20%D7%94%D7%97%D7%9C%20%D7%9E-%E2%82%AA34%2C000.%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99%3A%20" target="_blank" rel="noopener" class="ask" data-cta="menu" data-product="app">לשאול על זה בוואטסאפ ←</a></span></p></div>
       <div class="price"><b>₪34,000</b><span>החל מ‑</span></div>
     </li>
     <li data-k="training">
       <div class="n">07</div>
-      <div><h3><a href="/training/" class="mlink">הדרכת AI לעסקים</a></h3><p>הדרכה פרטית לבעל עסק או למנהל, הדרכה קבוצתית לצוות, או <b>קורס שמותאם אישית למשרד.</b> פרונטלי או בזום.</p></div>
+      <div><h3><a href="/training/" class="mlink">הדרכת AI לעסקים</a></h3><p>הדרכה פרטית לבעל עסק או למנהל, הדרכה קבוצתית לצוות, או <b>קורס שמותאם אישית למשרד.</b> פרונטלי או בזום.<span class="ask-w"><a href="https://wa.me/972546500795?text=%D7%94%D7%99%D7%99%20%D7%9E%D7%90%D7%99%D7%A8%2C%20%D7%A8%D7%90%D7%99%D7%AA%D7%99%20%D7%91%D7%90%D7%AA%D7%A8%3A%20%D7%94%D7%93%D7%A8%D7%9B%D7%AA%20AI%20%D7%9C%D7%A2%D7%A1%D7%A7%D7%99%D7%9D.%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99%3A%20" target="_blank" rel="noopener" class="ask" data-cta="menu" data-product="training">לשאול על זה בוואטסאפ ←</a></span></p></div>
       <div class="price"><b>לפי היקף</b><span>ומספר משתתפים</span></div>
     </li>
     <li data-k="ops">
       <div class="n">08</div>
-      <div><h3><a href="/pricing/" class="mlink">ליווי חודשי (AI Ops)</a></h3><p><b>שקט, <span class="num">₪1,900</span>:</b> ניטור, תיקונים כשספק משנה משהו, עד 5 שעות שינויים ודוח חודשי.<br><b>צמיחה, <span class="num">₪4,900</span>:</b> 15 עד 20 שעות, אוטומציה חדשה כל חודש, מענה תוך 24 שעות.<br><b>שותף, <span class="num">₪12,000</span>:</b> בקשה אחת בכל רגע, תור ללא הגבלה, השהיה וביטול בכל עת.</p></div>
+      <div><h3><a href="/pricing/" class="mlink">ליווי חודשי (AI Ops)</a></h3><p><b>שקט, <span class="num">₪1,900</span>:</b> ניטור, תיקונים כשספק משנה משהו, עד 5 שעות שינויים ודוח חודשי.<br><b>צמיחה, <span class="num">₪4,900</span>:</b> 15 עד 20 שעות, אוטומציה חדשה כל חודש, מענה תוך 24 שעות.<br><b>שותף, <span class="num">₪12,000</span>:</b> בקשה אחת בכל רגע, תור ללא הגבלה, השהיה וביטול בכל עת.<span class="ask-w"><a href="https://wa.me/972546500795?text=%D7%94%D7%99%D7%99%20%D7%9E%D7%90%D7%99%D7%A8%2C%20%D7%A8%D7%90%D7%99%D7%AA%D7%99%20%D7%91%D7%90%D7%AA%D7%A8%3A%20%D7%9C%D7%99%D7%95%D7%95%D7%99%20%D7%97%D7%95%D7%93%D7%A9%D7%99%20%28AI%20Ops%29%2C%20%D7%94%D7%97%D7%9C%20%D7%9E-%E2%82%AA1%2C900%20%D7%9C%D7%97%D7%95%D7%93%D7%A9.%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99%3A%20" target="_blank" rel="noopener" class="ask" data-cta="menu" data-product="ops">לשאול על זה בוואטסאפ ←</a></span></p></div>
       <div class="price"><b>₪1,900</b><span>לחודש, החל מ‑</span></div>
     </li>
   </ul>
-  <p class="menu-note">כל המחירים לפני מע"מ. Claude, וואטסאפ והשרת רצים על החשבונות שלך, בדרך כלל ₪100 עד ₪500 בחודש ישירות לספקים. ליווי חודשי הוא חודש‑בחודש אחרי שלושה חודשים ראשונים.</p>
+  <p class="menu-note"><b>המחיר הסופי נקבע אחרי שנבין מה צריך. שאל לפני.</b> כל המחירים לפני מע"מ. Claude, וואטסאפ והשרת רצים על החשבונות שלך, בדרך כלל ₪100 עד ₪500 בחודש ישירות לספקים. ליווי חודשי הוא חודש‑בחודש אחרי שלושה חודשים ראשונים.</p>
 </section>
 
 <!-- ================= 05 המחיר שלך ================= -->
@@ -921,7 +953,7 @@ html.static body::after,html.static .marq .track,html.static .hint::after,html.s
     <h2>איך עובדים.</h2>
   </div>
   <ul class="spec">
-    <li><b>30 דק׳</b><span>שיחת היכרות, חינם. איפה הזמן הולך לאיבוד ואיפה לקוחות נופלים</span></li>
+    <li><b>יום</b><span>אתה כותב לי במילה מה העסק שלך, ותוך יום עסקים מקבל 3 רעיונות קונקרטיים ל‑AI אצלך</span></li>
     <li><b>שבוע</b><span>מיפוי AI: אב‑טיפוס עובד, מסמך אפיון ומחיר קבוע. ₪4,900, מזוכה במלואו בבנייה</span></li>
     <li><b>14 יום</b><span>לאוטומציה או לסוכן. 30 עד 45 יום למערכת או לאפליקציה</span></li>
     <li><b>40/40/20</b><span>תשלום באבני דרך. גרסה עובדת שרואים ומאשרים כל שבוע</span></li>
@@ -977,11 +1009,12 @@ html.static body::after,html.static .marq .track,html.static .hint::after,html.s
       <div class="ch-head rv" style="margin-bottom:10px"><span class="n">10</span></div>
       <h2 class="rv">בוא נדבר על העסק שלך.</h2>
       <div class="status"><i></i>עונה תוך שעה בשעות העבודה.</div>
-      <p><b>שיחה של 30 דקות, חינם.</b> בסופה תדע מה שווה לאוטומט אצלך קודם, ומה השלב הבא. בלי התחייבות ובלי מצגות.</p>
+      <p><b>כתוב לי במילה אחת מה העסק שלך,</b> ואחזור אליך תוך יום עסקים עם 3 רעיונות קונקרטיים ל‑AI אצלך. בלי התחייבות ובלי מצגות.</p>
+      <span class="how-k">איך זה עובד</span>
       <ol class="steps">
-        <li><span class="n">01</span><span>משאיר פרטים כאן, חצי דקה. או ישר בוואטסאפ.</span></li>
-        <li><span class="n">02</span><span>שיחת היכרות של 30 דקות, חינם. איפה הזמן הולך לאיבוד, איפה לקוחות נופלים.</span></li>
-        <li><span class="n">03</span><span>מיפוי AI של שבוע, ₪4,900, מזוכה במלואו. יוצאים עם אב‑טיפוס עובד ומחיר קבוע. מחליט בלי לחץ.</span></li>
+        <li><span class="n">01</span><span>אתה כותב לי במילה אחת מה העסק שלך. כאן בטופס, או ישר בוואטסאפ.</span></li>
+        <li><span class="n">02</span><span>תוך יום עסקים אני חוזר עם 3 רעיונות קונקרטיים ל‑AI אצלך.</span></li>
+        <li><span class="n">03</span><span>בוחרים אחד ומתחילים קטן, במחיר שסוגרים מראש.</span></li>
       </ol>
       <div class="private">
         <p>רוצה קודם לראות את הסוכן בפעולה? כתוב לו בוואטסאפ של AI Lab.</p>
@@ -991,20 +1024,23 @@ html.static body::after,html.static .marq .track,html.static .hint::after,html.s
     <form class="form" id="leadForm" novalidate onsubmit="return submitLead(event)">
       <input type="text" name="website" id="website" tabindex="-1" autocomplete="off" style="position:absolute;inset-inline-start:0;top:0;width:1px;height:1px;opacity:0;pointer-events:none;overflow:hidden" aria-hidden="true">
       <div class="field"><label for="name">שם</label><input type="text" id="name" name="name" placeholder="איך קוראים לך?" required autocomplete="name"></div>
-      <div class="field opt"><label for="biz">העסק</label><input type="text" id="biz" name="biz" placeholder="שם העסק ותחום"></div>
       <div class="field"><label for="phone">טלפון (וואטסאפ)</label><input type="tel" id="phone" name="phone" placeholder="050-0000000" required autocomplete="tel"></div>
-      <div class="field opt"><label for="goal">מה היית רוצה שיקרה לבד? (לא חובה)</label>
-        <select id="goal" name="goal">
-          <option value="">עדיין לא בטוח, וזה בסדר</option>
-          <option>סוכן AI שעונה ללקוחות</option>
-          <option>אוטומציה של תהליך שחוזר על עצמו</option>
-          <option>מערכת פנימית במקום אקסלים</option>
-          <option>אפליקציה ללקוחות או לצוות</option>
-        </select>
-      </div>
-      <button type="submit" class="btn acc">לקבוע שיחת היכרות <span class="ar">←</span></button>
-      <div class="alt"><span>הפרטים נשארים אצל מאיר בלבד.</span><a href="#" onclick="leadWhatsApp();return false;">או ישר בוואטסאפ</a></div>
-      <div class="ok" id="formOk">הפרטים התקבלו. מאיר חוזר אליך תוך שעה בשעות העבודה.</div>
+      <div class="field"><label for="biz">מה העסק שלך</label><input type="text" id="biz" name="biz" placeholder="במילה אחת: קליניקה, משרד תיווך, חנות…" autocomplete="organization"></div>
+      <details class="more"><summary>עוד פרטים (לא חובה)</summary>
+        <div class="field"><label for="goal">מה היית רוצה שיקרה לבד?</label>
+          <select id="goal" name="goal">
+            <option value="">עדיין לא בטוח, וזה בסדר</option>
+            <option>סוכן AI שעונה ללקוחות</option>
+            <option>אוטומציה של תהליך שחוזר על עצמו</option>
+            <option>מערכת פנימית במקום אקסלים</option>
+            <option>אפליקציה ללקוחות או לצוות</option>
+          </select>
+        </div>
+      </details>
+      <button type="submit" class="btn acc">לקבל 3 רעיונות <span class="ar">←</span></button>
+      <div class="alt"><span>הפרטים נשארים אצל מאיר בלבד.</span><a href="https://wa.me/972546500795?text=%D7%94%D7%99%D7%99%20%D7%9E%D7%90%D7%99%D7%A8%2C%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99%3A%20" target="_blank" rel="noopener" id="formWa" data-cta="form_alt">או ישר בוואטסאפ</a></div>
+      <div class="ok" id="formOk" role="status">קיבלתי, אחזור תוך יום עסקים.<br><a href="https://wa.me/972546500795?text=%D7%94%D7%99%D7%99%20%D7%9E%D7%90%D7%99%D7%A8%2C%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99%3A%20" target="_blank" rel="noopener" data-cta="form_ok">או כתוב לי עכשיו בוואטסאפ</a></div>
+      <div class="err" id="formErr" role="alert">השליחה לא עברה, והפרטים לא הגיעו אליי. שלח לי אותם בוואטסאפ, בלחיצה אחת:<br><a href="https://wa.me/972546500795?text=%D7%94%D7%99%D7%99%20%D7%9E%D7%90%D7%99%D7%A8%2C%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99%3A%20" target="_blank" rel="noopener" data-cta="form_error">לשלוח בוואטסאפ</a></div>
     </form>
   </div>
 </section>
@@ -1033,7 +1069,7 @@ html.static body::after,html.static .marq .track,html.static .hint::after,html.s
       <h4>יצירת קשר</h4>
       <a href="tel:054-6500795">054-6500795</a>
       <a href="mailto:laviemb@gmail.com">laviemb@gmail.com</a>
-      <a href="https://wa.me/972546500795" target="_blank" rel="noopener">וואטסאפ</a>
+      <a href="https://wa.me/972546500795?text=%D7%94%D7%99%D7%99%20%D7%9E%D7%90%D7%99%D7%A8%2C%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99%3A%20" target="_blank" rel="noopener">וואטסאפ</a>
     </div>
     <div>
       <h4>מה בונים</h4>
@@ -1053,11 +1089,8 @@ html.static body::after,html.static .marq .track,html.static .hint::after,html.s
   </div>
 </footer>
 
-<nav class="mbar" id="mbar" aria-label="ניווט מהיר">
-  <a href="#build" class="mb"><svg class="line" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>מה בונים</span></a>
-  <a href="#seat" class="mb primary">שיחת היכרות</a>
-  <a href="https://wa.me/972546500795" target="_blank" rel="noopener" class="mb"><svg class="fill" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.272-.099-.47-.149-.669.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.464 3.488"/></svg><span>וואטסאפ</span></a>
-</nav>
+<a href="https://wa.me/972546500795?text=%D7%94%D7%99%D7%99%20%D7%9E%D7%90%D7%99%D7%A8%2C%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99%3A%20" id="wabar" class="wabar" target="_blank" rel="noopener" data-cta="sticky_bar" aria-label="3 רעיונות ל-AI לעסק שלך, בוואטסאפ"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.27-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.41"/></svg><span>3 רעיונות ל‑AI לעסק שלך, בוואטסאפ</span></a>
+<script src="assets/wa.js" defer></script>
 
 <script>
 /* ============ מוצרים ============ */
@@ -1216,11 +1249,11 @@ window.HERO.word = PROD[cur].word;
   calc();
 
   // ---- בחירת מוצר ----
-  const prodH = document.getElementById('prodH'), prodP = document.getElementById('prodP'), prodAsk = document.getElementById('prodAsk');
+  const prodH = document.getElementById('prodH'), prodP = document.getElementById('prodP'), heroWa = document.getElementById('heroWa');
   function setProduct(k, first) {
     cur = k; document.documentElement.setAttribute('data-product', k);
     const d = PROD[k];
-    if (prodAsk) prodAsk.href = 'https://wa.me/972546500795?text=' + encodeURIComponent('היי מאיר, ראיתי באתר: ' + d.name + ', ' + d.price + '. יש לי שאלה על המחיר הזה לעסק שלי.');
+    if (heroWa) { heroWa.href = 'https://wa.me/972546500795?text=' + encodeURIComponent('היי מאיר, ראיתי באתר: ' + d.name + ', ' + d.price + '. העסק שלי: '); heroWa.dataset.product = k; }
     document.querySelectorAll('.chip').forEach(b => b.classList.toggle('on', b.dataset.k === k));
     document.querySelectorAll('#menu li').forEach(li => { li.classList.toggle('hl', li.dataset.k === k); if (SMALL) li.classList.toggle('open', li.dataset.k === k); });
     const put = () => { prodH.textContent = d.h; prodP.innerHTML = d.p; };
@@ -1234,7 +1267,7 @@ window.HERO.word = PROD[cur].word;
 
   // ---- מובייל: אקורדיונים (תפריט, בעלות) + "התאם עוד" במחשבון ----
   if (SMALL) {
-    document.querySelectorAll('#menu li').forEach(li => { li.setAttribute('role', 'button'); li.setAttribute('aria-expanded', li.classList.contains('open')); li.addEventListener('click', () => { li.classList.toggle('open'); li.setAttribute('aria-expanded', li.classList.contains('open')); }); });
+    document.querySelectorAll('#menu li').forEach(li => { li.setAttribute('role', 'button'); li.setAttribute('aria-expanded', li.classList.contains('open')); li.addEventListener('click', (e) => { if (e.target.closest('a.ask')) return; li.classList.toggle('open'); li.setAttribute('aria-expanded', li.classList.contains('open')); }); });
     document.querySelectorAll('.own > div').forEach(d => d.addEventListener('click', () => { d.classList.toggle('open'); }));
     const cm = document.getElementById('calcMore'); const calcEl = document.querySelector('.calc');
     if (cm && calcEl) { cm.style.display = 'inline-flex'; cm.addEventListener('click', () => { calcEl.classList.add('more'); ScrollTrigger.refresh(); }); }
@@ -1248,7 +1281,7 @@ window.HERO.word = PROD[cur].word;
   // ---- מדידה: אירועי GA4 ----
   const ev = (name, params) => { if (window.gtag) gtag('event', name, params || {}); };
   document.querySelectorAll('a[href*="wa.me"]').forEach(a => a.addEventListener('click', () => ev('whatsapp_click', Object.assign({ location: a.closest('section,header,nav,footer')?.id || a.closest('header,nav,footer')?.className || 'page' }, a.dataset.label ? { label: a.dataset.label, product: cur } : {}))));
-  document.querySelectorAll('a[href="#seat"]').forEach(a => a.addEventListener('click', () => ev('cta_click', { location: a.closest('section,header,nav')?.id || 'nav' })));
+  document.querySelectorAll('a[href="#seat"]').forEach(a => a.addEventListener('click', () => ev('cta_click', { cta_section: 'to_form', cta_label: a.textContent.trim(), location: a.closest('section,header,nav')?.id || 'nav' })));
   document.querySelectorAll('.chip').forEach(b => b.addEventListener('click', () => ev('select_product', { product: b.dataset.k })));
   let calcSent = false; [rl, rm, rv].forEach(r => r.addEventListener('input', () => { if (!calcSent) { calcSent = true; ev('calculator_use', {}); } }));
   document.querySelectorAll('#menu li').forEach(li => li.addEventListener('click', () => ev('menu_open', { product: li.dataset.k })));
@@ -1306,25 +1339,30 @@ async function submitLead(e) {
   if (!/^0\d{1,2}[- ]?\d{3}[- ]?\d{4}$/.test(data.phone)) { alert('מספר הטלפון לא נראה תקין.'); document.getElementById('phone').focus(); return false; }
   if (!LEADS_URL) { leadWhatsApp(); return false; }
   btn.disabled = true; btn.textContent = 'שולח…';
+  const er = document.getElementById('formErr'); ok.classList.remove('show'); er.classList.remove('show');
+  const wa = 'https://wa.me/972546500795?text=' + encodeURIComponent(waMsg());
+  // "התקבל" רק אחרי 2xx מהשרת וגם success:true. כל כשל: הודעת כשל + וואטסאפ עם אותם פרטים.
   try {
     const res = await fetch(LEADS_URL, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(data) });
-    const json = await res.json(); if (!json.success) throw new Error(json.error || 'שגיאה');
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const json = await res.json(); if (!json || json.success !== true) throw new Error((json && json.error) || 'שגיאה');
     if (window.gtag) gtag('event', 'generate_lead', { method: 'form', product: data.product });
     if (window.fbq) fbq('track', 'Lead', { content_name: data.product });
-    ok.classList.add('show'); form.reset(); btn.textContent = 'נשלח';
+    ok.querySelector('a').href = wa; ok.classList.add('show'); form.reset(); btn.textContent = 'נשלח';
     setTimeout(() => { btn.disabled = false; btn.innerHTML = orig; }, 4000);
   } catch (err) {
     btn.disabled = false; btn.innerHTML = orig;
-    if (confirm('השליחה נכשלה. לשלוח במקום זה בוואטסאפ?')) leadWhatsApp();
+    er.querySelector('a').href = wa; er.classList.add('show');
   }
   return false;
 }
-function leadWhatsApp() {
-  const name = (document.getElementById('name').value || '').trim(), biz = (document.getElementById('biz').value || '').trim(), goal = document.getElementById('goal').value;
-  let msg = 'היי מאיר! ' + (name ? 'אני ' + name + (biz ? ' מ‑' + biz : '') + ', ו' : '') + 'אשמח לפגישת אפיון על העסק שלי.';
-  if (goal) msg += ' מה שהייתי רוצה שיקרה לבד: ' + goal + '.';
-  window.open('https://wa.me/972546500795?text=' + encodeURIComponent(msg), '_blank');
+function waMsg() {
+  const v = id => (document.getElementById(id).value || '').trim();
+  const name = v('name'), biz = v('biz'), goal = document.getElementById('goal').value;
+  return 'היי מאיר, ' + (name ? 'אני ' + name + '. ' : '') + 'העסק שלי: ' + biz + (goal ? ' (מעניין אותי: ' + goal + ')' : '');
 }
+function leadWhatsApp() { window.open('https://wa.me/972546500795?text=' + encodeURIComponent(waMsg()), '_blank'); }
+document.getElementById('formWa').addEventListener('click', function () { this.href = 'https://wa.me/972546500795?text=' + encodeURIComponent(waMsg()); });
 </script>
 
 <script type="module">
