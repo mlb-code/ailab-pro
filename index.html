@@ -669,6 +669,26 @@ html.static body::after,html.static .marq .track,html.static .hint::after,html.s
 .menu .ask:hover{color:#F2BC63;text-decoration-color:currentColor}
 .menu-note b{color:var(--fg-2);font-weight:600}
 @media(max-width:760px){.menu .ask{display:inline-flex;align-items:center;min-height:40px}.hs .offer{margin-top:14px;padding:10px 12px}.hs .offer p{font-size:.9rem}.hs .offer + .ctas{margin-top:12px}}
+
+/* ===== המשפחה של AI Lab, בראש הפוטר (09.11.2026) ===== */
+.fam{padding-bottom:44px;margin-bottom:44px;border-bottom:1px solid var(--line)}
+.fam-h{display:flex;justify-content:space-between;align-items:flex-end;gap:10px 24px;flex-wrap:wrap;margin-bottom:22px}
+.fam-k{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;color:var(--acc)}
+.fam-h p{color:var(--fg-2);font-size:.95rem;margin:0;max-width:none}
+.fam-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.fam-c{position:relative;display:flex;flex-direction:column;gap:8px;padding:24px 22px 20px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(160deg,rgba(239,231,216,.05),rgba(239,231,216,.012));overflow:hidden;color:var(--fg);transition:transform .35s,border-color .35s,background .35s}
+.fam-c::before{content:"";position:absolute;inset:0 0 auto 0;height:2px;background:linear-gradient(90deg,var(--c1),var(--c2))}
+.fam-c::after{content:"";position:absolute;width:240px;height:240px;inset-inline-start:-90px;top:-120px;border-radius:50%;background:radial-gradient(closest-side,var(--c1),transparent);opacity:.13;pointer-events:none;transition:opacity .35s}
+.fam-c:hover{transform:translateY(-3px);border-color:var(--line-2);color:var(--fg)}
+.fam-c:hover::after{opacity:.3}
+.fam-n{position:relative;display:flex;align-items:center;justify-content:flex-end;gap:9px;direction:ltr;font-family:var(--serif);font-size:1.5rem;font-weight:700;line-height:1.1;color:var(--fg)}
+.fam-n img{width:24px;height:24px;flex:none}
+.fam-n small{font-family:var(--mono);font-size:.58rem;font-weight:700;letter-spacing:.22em;background:linear-gradient(90deg,var(--c1),var(--c2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.fam-d{position:relative;color:var(--fg-2);font-size:1rem}
+.fam-u{position:relative;margin-top:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.05em;color:var(--fg-3);direction:ltr;text-align:right;transition:color .35s}
+.fam-c:hover .fam-u{color:var(--c2)}
+@media(max-width:860px){.fam-g{grid-template-columns:1fr;gap:10px}.fam-c{padding:18px 18px 16px}.fam-n{font-size:1.3rem}.fam{padding-bottom:32px;margin-bottom:32px}}
+@media(prefers-reduced-motion:reduce){.fam-c,.fam-c::after{transition:none}}
 </style>
 </head>
 <body>
@@ -1064,6 +1084,14 @@ html.static body::after,html.static .marq .track,html.static .hint::after,html.s
 </section>
 
 <footer class="wrap">
+  <div class="fam">
+    <div class="fam-h"><span class="fam-k">המשפחה של AI Lab</span><p>אותו מייסד, אותה שיטה. עוד שלוש זרועות שבונות עם AI.</p></div>
+    <div class="fam-g">
+      <a class="fam-c" style="--c1:#7ef0d4;--c2:#8b5cf6" href="https://ai-lab.co.il" target="_blank" rel="noopener" data-brand="ai-lab"><span class="fam-n"><img src="/gem.png" alt="" width="24" height="24">AI Lab</span><span class="fam-d">מרכז למיומניות העתיד</span><span class="fam-u">ai-lab.co.il ↗</span></a>
+      <a class="fam-c" style="--c1:#F7D08A;--c2:#E8A64A" href="https://starter.ai-lab.co.il" target="_blank" rel="noopener" data-brand="starter"><span class="fam-n"><img src="/gem.png" alt="" width="24" height="24">AI Lab <small>STARTER</small></span><span class="fam-d">הכשרות ושיעורים פרטיים לעצמאים</span><span class="fam-u">starter.ai-lab.co.il ↗</span></a>
+      <a class="fam-c" style="--c1:#E2B08C;--c2:#B4653A" href="https://urban.ai-lab.co.il" target="_blank" rel="noopener" data-brand="urban"><span class="fam-n"><img src="/gem.png" alt="" width="24" height="24">AI Lab <small>URBAN</small></span><span class="fam-d">הכשרות AI לנדל״ן</span><span class="fam-u">urban.ai-lab.co.il ↗</span></a>
+    </div>
+  </div>
   <div class="foot">
     <div>
       <div class="brand"><img src="gem.png" class="gem" alt="">AI Lab <small>PRO</small></div>
@@ -1082,8 +1110,6 @@ html.static body::after,html.static .marq .track,html.static .hint::after,html.s
     <div>
       <h4>עוד</h4>
       <a href="/start/">התחל: שאלון לתהליך שלך</a>
-      <a href="https://ai-lab.co.il" target="_blank" rel="noopener">AI Lab לילדים ונוער</a>
-      <a href="https://starter.ai-lab.co.il" target="_blank" rel="noopener">AI Lab Starter, קורס למבוגרים</a>
       <a href="https://www.linkedin.com/in/meirlavi" target="_blank" rel="noopener">LinkedIn</a>
     </div>
   </div>
