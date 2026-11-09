@@ -212,7 +212,8 @@ footer{padding:60px 0 40px}
 .fam-h{display:flex;justify-content:space-between;align-items:flex-end;gap:10px 24px;flex-wrap:wrap;margin-bottom:22px}
 .fam-k{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;color:var(--acc)}
 .fam-h p{color:var(--fg-2);font-size:.95rem;margin:0;max-width:none}
-.fam-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.fam-g{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+@media(max-width:1200px){.fam-g{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .fam-c{position:relative;display:flex;flex-direction:column;gap:8px;padding:24px 22px 20px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(160deg,rgba(239,231,216,.05),rgba(239,231,216,.012));overflow:hidden;color:var(--fg);transition:transform .35s,border-color .35s,background .35s}
 .fam-c::before{content:"";position:absolute;inset:0 0 auto 0;height:2px;background:linear-gradient(90deg,var(--c1),var(--c2))}
 .fam-c::after{content:"";position:absolute;width:240px;height:240px;inset-inline-start:-90px;top:-120px;border-radius:50%;background:radial-gradient(closest-side,var(--c1),transparent);opacity:.13;pointer-events:none;transition:opacity .35s}
@@ -222,7 +223,7 @@ footer{padding:60px 0 40px}
 .fam-n img{width:24px;height:24px;flex:none}
 .fam-n small{font-family:var(--mono);font-size:.58rem;font-weight:700;letter-spacing:.22em;background:linear-gradient(90deg,var(--c1),var(--c2));-webkit-background-clip:text;background-clip:text;color:transparent}
 .fam-d{position:relative;color:var(--fg-2);font-size:1rem}
-.fam-u{position:relative;margin-top:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.05em;color:var(--fg-3);direction:ltr;text-align:right;transition:color .35s}
+.fam-u{position:relative;margin-top:auto;padding-top:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.05em;color:var(--fg-3);direction:ltr;text-align:right;transition:color .35s}
 .fam-c:hover .fam-u{color:var(--c2)}
 @media(max-width:860px){.fam-g{grid-template-columns:1fr;gap:10px}.fam-c{padding:18px 18px 16px}.fam-n{font-size:1.3rem}.fam{padding-bottom:32px;margin-bottom:32px}}
 @media(prefers-reduced-motion:reduce){.fam-c,.fam-c::after{transition:none}}
