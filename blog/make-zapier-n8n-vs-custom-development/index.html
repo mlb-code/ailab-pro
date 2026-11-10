@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0F1A26">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <title>Make, Zapier או n8n מול פיתוח מותאם עם Claude (2026): מה מתאים לעסק שלך | AI Lab Pro</title>
+  <meta name="description" content="Make, Zapier ו-n8n מתאימים לתהליך פשוט בין אפליקציות מוכרות, מכ-$10 עד $100 בחודש. פיתוח מותאם עם Claude מתאים כשיש לוגיקה, עברית ונפח.">
+  <link rel="canonical" href="https://pro.ai-lab.co.il/blog/make-zapier-n8n-vs-custom-development/">
+  <meta property="og:type" content="article"><meta property="og:locale" content="he_IL"><meta property="og:site_name" content="AI Lab Pro">
+  <meta property="og:title" content="Make, Zapier או n8n מול פיתוח מותאם עם Claude (2026): מה מתאים לעסק שלך | AI Lab Pro"><meta property="og:description" content="Make, Zapier ו-n8n מתאימים לתהליך פשוט בין אפליקציות מוכרות, מכ-$10 עד $100 בחודש. פיתוח מותאם עם Claude מתאים כשיש לוגיקה, עברית ונפח."><meta property="og:url" content="https://pro.ai-lab.co.il/blog/make-zapier-n8n-vs-custom-development/"><meta property="og:image" content="https://pro.ai-lab.co.il/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/gem.png" type="image/png">
+  <!-- Google tag (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YVHQM9L20S"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}if(!/^(localhost|127\.0\.0\.1)$/.test(location.hostname)){gtag('js',new Date());gtag('config','G-YVHQM9L20S');}</script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">if(!/^(localhost|127\.0\.0\.1)$/.test(location.hostname)){(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "ysd8cjs20e");}</script>
+  <!-- Meta Pixel -->
+  <script>if(!/^(localhost|127\.0\.0\.1)$/.test(location.hostname)){!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1107052935634034');fbq('track','PageView');}</script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1107052935634034&ev=PageView&noscript=1"/></noscript>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Hebrew:wdth,wght@62.5..100,100..900&family=Noto+Sans+Hebrew:wdth,wght@62.5..100,100..900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/page.css"><style>.tbl{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:10px 0 22px;max-width:100%;border:1px solid var(--line);border-radius:14px}.tbl table{border-collapse:collapse;width:100%;min-width:560px;font-size:.95rem;text-align:start}.tbl th,.tbl td{padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top;text-align:start}.tbl th{color:var(--acc);font-weight:600;white-space:nowrap;font-size:.86rem;background:var(--bg-2)}.tbl tr:last-child td{border-bottom:0}.tbl td{color:var(--fg-2)}.tbl td:first-child{color:var(--fg)}.prose ol{list-style:none;counter-reset:o;margin:10px 0 18px}.prose ol li{padding-inline-start:30px}.prose ol li::before{counter-increment:o;content:counter(o) ".";width:auto;height:auto;background:none;top:.1em;color:var(--acc);font-family:var(--mono);font-size:.78rem}</style>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://pro.ai-lab.co.il/#org", "name": "AI Lab Pro", "url": "https://pro.ai-lab.co.il", "logo": "https://pro.ai-lab.co.il/gem.png", "founder": {"@type": "Person", "name": "מאיר לביא", "sameAs": ["https://www.linkedin.com/in/meirlavi"]}, "telephone": "+972-54-650-0795", "email": "laviemb@gmail.com", "areaServed": "IL", "description": "סוכני AI, אוטומציות, מערכות פנימיות ואפליקציות לעסקים. נבנה עם Claude."}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "AI Lab Pro", "item": "https://pro.ai-lab.co.il/"}, {"@type": "ListItem", "position": 2, "name": "בלוג", "item": "https://pro.ai-lab.co.il/blog/make-zapier-n8n-vs-custom-development/"}]}, {"@type": "BlogPosting", "headline": "Make, Zapier או n8n מול פיתוח מותאם עם Claude (2026)", "description": "Make, Zapier ו-n8n מתאימים לתהליך פשוט בין אפליקציות מוכרות, מכ-$10 עד $100 בחודש. פיתוח מותאם עם Claude מתאים כשיש לוגיקה, עברית ונפח.", "datePublished": "2026-11-10", "dateModified": "2026-11-10", "inLanguage": "he", "author": {"@type": "Person", "name": "מאיר לביא"}, "publisher": {"@id": "https://pro.ai-lab.co.il/#org"}, "mainEntityOfPage": "https://pro.ai-lab.co.il/blog/make-zapier-n8n-vs-custom-development/"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "מה עדיף לעסק קטן, Zapier או Make?", "acceptedAnswer": {"@type": "Answer", "text": "לתהליך פשוט בין אפליקציות מוכרות שניהם עובדים היטב. Zapier נחשב פשוט יותר להתחלה, Make גמיש יותר בתרחישים מרובי שלבים ובדרך כלל זול יותר בנפח. כדאי לנסות את שניהם על אותו תהליך."}}, {"@type": "Question", "name": "כמה עולים Make, Zapier ו-n8n בחודש?", "acceptedAnswer": {"@type": "Answer", "text": "בסוף 2026 החבילות הבסיסיות בתשלום נעות בערך בין $10 ל-$30 בחודש, וחבילות צוות בין כ-$60 ל-$100 ויותר. n8n בהתקנה עצמית בלי רישיון, ומשלמים על שרת. המחירים משתנים, ולכן כדאי לבדוק באתר של כל כלי."}}, {"@type": "Question", "name": "מתי כלי No-Code נתקע?", "acceptedAnswer": {"@type": "Answer", "text": "כשהלוגיקה מסתעפת לעשרות מסלולים, כשצריך לעבד מסמכים בעברית, כשאין מחבר מוכן למערכת ישראלית, כשהנפח מייקר את החבילה, וכשאף אחד בעסק לא יודע לתחזק את התרחיש."}}, {"@type": "Question", "name": "כמה עולה פיתוח מותאם במקום Zapier?", "acceptedAnswer": {"@type": "Answer", "text": "אצל AI Lab Pro אוטומציה בקוד לתהליך אחד מתחילה ב-₪4,900 לפני מע\"מ ונבנית תוך 14 יום. העלות החודשית היא בעיקר שרת ושירותים חיצוניים, על החשבונות שלך."}}, {"@type": "Question", "name": "אפשר לשלב בין הגישות?", "acceptedAnswer": {"@type": "Answer", "text": "כן, וזה נפוץ. משאירים ב-Zapier או ב-Make את החיבורים הפשוטים שעובדים, ובונים בקוד רק את החלק שנתקע."}}]}]}</script>
+</head>
+<body>
+<header class="nav">
+  <a href="/" class="logo"><img src="/gem.png" class="gem" alt="">AI Lab <small>PRO</small></a>
+  <div class="right">
+    <a href="/#build">מה בונים</a>
+    <a href="/pricing/">מחירים</a>
+    <a href="/work/">פרויקטים</a>
+    <a href="/about/">מי בונה</a>
+    <a href="/start/">התחל</a>
+    <a href="https://wa.me/972546500795?text=%D7%94%D7%99%D7%99%20%D7%9E%D7%90%D7%99%D7%A8%2C%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99%3A%20" target="_blank" rel="noopener">וואטסאפ</a>
+    <a href="#seat" class="cta">בוא נדבר</a>
+  </div>
+</header>
+<main>
+<section class="phero">
+  <div>
+    <div class="crumbs"><span><a href="/">AI Lab Pro</a></span><span><a href="/blog/">בלוג</a></span><span>2026-11-10</span></div>
+    <h1>Make, Zapier או n8n מול פיתוח מותאם עם Claude (2026)</h1>
+    <p class="lead">Make, Zapier ו-n8n הם בחירה טובה לתהליך פשוט בין אפליקציות מוכרות, בנפח נמוך, כשמישהו בעסק יכול לתחזק אותו, ועולים בערך בין $10 ל-$100 בחודש. פיתוח מותאם עם Claude מתאים כשיש הרבה לוגיקה וחריגים, מסמכים בעברית, מערכות בלי מחבר מוכן, או נפח שמייקר את המנוי. אצל AI Lab Pro תהליך כזה בקוד מתחיל ב-₪4,900 לפני מע"מ. אין כאן מנצח אחד. יש התאמה לסוג התהליך, לנפח, ולמי שיחזיק אותו ביום שאחרי.</p>
+    <div class="offer"><img src="/meir-sm.jpg" alt="מאיר לביא" width="46" height="46" class="av"><p><b>כתוב לי במילה אחת מה העסק שלך,</b> ואחזור אליך עם 3 רעיונות קונקרטיים ל‑AI אצלך.<span class="by">מאיר לביא, עונה אישית</span></p></div>
+    <div class="ctas"><a href="https://wa.me/972546500795?text=%D7%94%D7%99%D7%99%20%D7%9E%D7%90%D7%99%D7%A8%2C%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99%3A%20" target="_blank" rel="noopener" class="btn acc" data-cta="hero">שלח לי מה העסק שלך ←</a><a href="/pricing/" class="btn">מחירים</a></div>
+    <p class="fine">עודכן <b>נובמבר 2026</b> · המחירים לפני מע"מ</p>
+  </div>
+  <div class="bigword" aria-hidden="true">כלים</div>
+</section><section class="ch wrap"><div class="ch-head"><span class="n">01</span><div><h2>מה ההבדל בין שלושת הכלים?</h2></div></div><div class="prose">
+<p><b>Zapier</b> הוא הכלי הוותיק והמוכר. יש לו את מספר החיבורים הגדול ביותר לאפליקציות, וממשק פשוט שמתאים למי שמעולם לא בנה אוטומציה. התמחור לפי משימות, כלומר כל צעד שרץ נספר.</p>
+<p><b>Make</b> מציג את התהליך כתרשים ויזואלי, ומאפשר הסתעפויות, לולאות וטיפול בשגיאות בצורה גמישה יותר. התמחור לפי פעולות, ובדרך כלל זול יותר מ-Zapier באותו נפח.</p>
+<p><b>n8n</b> הוא כלי בקוד פתוח. אפשר להשתמש בגרסת הענן בתשלום, או להתקין על שרת משלך בלי דמי רישיון. הוא מאפשר לשלב קטעי קוד בתוך התהליך, ולכן פופולרי אצל אנשים טכניים. התמחור בענן לפי הרצות, ולא לפי כל צעד.</p>
+<p><b>פיתוח מותאם עם Claude</b> הוא קוד שנכתב לתהליך שלך, נשמר בריפו שלך ורץ על שרת שלך. Claude משמש גם בכתיבת הקוד, וגם, כשצריך, בתוך התהליך עצמו: לקרוא מסמך, לסווג פנייה או לנסח תשובה.</p></div></section><section class="ch wrap"><div class="ch-head"><span class="n">02</span><div><h2>כמה זה עולה בחודש?</h2></div></div><div class="prose">
+<p>המחירים של הכלים משתנים לעיתים קרובות, וגם מקורות שונים מדווחים מספרים שונים. הטבלה מסכמת סדרי גודל בסוף 2026, ולפני החלטה כדאי לבדוק בדף המחירים של כל כלי.</p>
+<div class="tbl"><table><thead><tr><th>גישה</th><th>הקמה</th><th>עלות חודשית טיפוסית</th><th>על מה משלמים</th></tr></thead><tbody><tr><td>Zapier</td><td>לבד, או עם מומחה</td><td>חבילה בסיסית בערך $20 עד $30, צוות בערך $70 עד $100 ויותר</td><td>מספר משימות בחודש</td></tr><tr><td>Make</td><td>לבד, או עם מומחה</td><td>חבילות בסיסיות בערך $10 עד $35</td><td>מספר פעולות בחודש</td></tr><tr><td>n8n בענן</td><td>לבד, או עם מומחה</td><td>בערך $24 עד $60 בחבילות הנפוצות</td><td>מספר הרצות בחודש</td></tr><tr><td>n8n בהתקנה עצמית</td><td>דורש הקמה טכנית</td><td>שרת בערך $5 עד $50, בלי רישיון</td><td>שרת וזמן תחזוקה</td></tr><tr><td>פיתוח מותאם עם Claude</td><td>אצל AI Lab Pro החל מ-₪4,900 לפני מע"מ</td><td>שרת כ-₪20 עד ₪100, ועוד שימוש ב-AI אם יש</td><td>שרת ושירותים חיצוניים, על החשבונות שלך</td></tr></tbody></table></div>
+<p>שתי הערות חשובות לטבלה:</p>
+<ul><li><b>בכלי No-Code יש גם זמן.</b> אם אתה בונה לבד, הזמן שלך הוא חלק מהעלות. אם שוכרים מומחה, משלמים גם על ההקמה.</li><li><b>בתהליך עם AI</b>, בכל אחת מהגישות משלמים גם על המודל עצמו. זה לא נעלם כשבוחרים כלי No-Code.</li></ul></div></section><section class="ch wrap"><div class="ch-head"><span class="n">03</span><div><h2>מתי Make, Zapier או n8n הם הבחירה הנכונה?</h2></div></div><div class="prose">
+<ul><li><b>התהליך פשוט וליניארי.</b> טופס באתר נכנס לגיליון ושולח מייל. שניים או שלושה צעדים, בלי הרבה "אם".</li><li><b>כל האפליקציות מוכרות.</b> Gmail, Google Sheets, Slack, HubSpot, Monday. למחברים הקיימים יש תחזוקה של היצרן.</li><li><b>הנפח נמוך.</b> כמה מאות הרצות בחודש נכנסות בחבילה הבסיסית.</li><li><b>יש בעסק מישהו שיתחזק.</b> עובד שאוהב את זה, יודע לפתוח את התרחיש ולתקן כשמשהו משתנה.</li><li><b>רוצים לבדוק רעיון מהר.</b> לפעמים הדרך הכי טובה לדעת אם תהליך שווה השקעה היא לבנות גרסה גסה בכלי No-Code בערב אחד.</li></ul>
+<p>אם כל אלה נכונים אצלך, כנראה שאתה לא צריך פיתוח מותאם, וזה בסדר גמור.</p></div></section><section class="ch wrap"><div class="ch-head"><span class="n">04</span><div><h2>מתי כלי No-Code נתקע?</h2></div></div><div class="prose">
+<ul><li><b>הלוגיקה מסתעפת.</b> תרחיש עם עשרות מסלולים, תנאים בתוך תנאים וחריגים, הופך קשה לקריאה ולשינוי. תיקון במקום אחד שובר מקום אחר.</li><li><b>מסמכים בעברית.</b> קריאה של חשבונית מצולמת, יצירת PDF מימין לשמאל בעיצוב שלך, או ניסוח הודעה טבעית בעברית, דורשים לרוב עבודה שחורגת ממה שהמחברים המוכנים נותנים.</li><li><b>מערכות בלי מחבר מוכן.</b> חלק מהמערכות שעסקים ישראליים עובדים איתן לא מופיעות בספריית המחברים. אפשר לעקוף עם קריאות API ידניות, אבל אז כבר כותבים קוד בתוך כלי שלא נבנה לזה.</li><li><b>הנפח עולה.</b> בתמחור לפי משימות, תהליך של עשרה צעדים שרץ אלפי פעמים בחודש מקפיץ את החבילה. בהתחלה זה זול, ובהמשך פחות.</li><li><b>אין בקרת גרסאות.</b> קשה לראות מה השתנה, מי שינה ומתי, ולחזור לגרסה קודמת בצורה מסודרת.</li><li><b>אף אחד לא יודע לתחזק.</b> מי שבנה עזב, והתרחיש ממשיך לרוץ עד שהוא מפסיק בשקט.</li><li><b>שיחה עם לקוח.</b> ניהול שיחה בוואטסאפ עם זיכרון, כללי הגנה והעברה לבן אדם הוא כבר סוכן AI, ולא רצף של צעדים.</li></ul></div></section><section class="ch wrap"><div class="ch-head"><span class="n">05</span><div><h2>מה היתרונות והחסרונות של פיתוח מותאם?</h2></div></div><div class="prose">
+<p><b>היתרונות:</b></p>
+<ul><li>הקוד והחשבונות על שמך, בלי תלות בפלטפורמה.</li><li>אין מגבלה של מחברים. כל מערכת עם API, או אפילו קובץ שמגיע במייל, אפשר לחבר.</li><li>בדיקות, תיעוד ובקרת גרסאות, כמו בכל תוכנה.</li><li>עלות חודשית שלא תלויה במספר הצעדים.</li></ul>
+<p><b>החסרונות:</b></p>
+<ul><li>שינוי דורש מפתח, או לפחות מישהו שמסתדר עם Claude Code. גרירה של בלוק במסך כבר לא מספיקה.</li><li>עלות הקמה גבוהה יותר מערב אחד של בנייה עצמית.</li><li>צריך שרת, גם אם קטן.</li></ul></div></section><section class="ch wrap"><div class="ch-head"><span class="n">06</span><div><h2>ומה עם שילוב?</h2></div></div><div class="prose">
+<p>שילוב הוא לעיתים קרובות התשובה הנכונה. החיבורים הפשוטים שעובדים טוב ב-Zapier או ב-Make נשארים שם. החלק שנתקע, למשל קריאת חשבוניות בעברית או לוגיקת תמחור מסובכת, נבנה בקוד ונחשף ככתובת אחת שהכלי הקיים קורא לה. כך לא מפרקים את מה שעובד.</p></div></section><section class="ch wrap"><div class="ch-head"><span class="n">07</span><div><h2>איך מחליטים בפועל?</h2></div></div><div class="prose">
+<p>שלוש שאלות:</p>
+<ol><li><b>כמה צעדים ותנאים יש בתהליך?</b> פחות מחמישה צעדים בלי הרבה הסתעפויות, נוטה ל-No-Code.</li><li><b>כמה פעמים בחודש הוא רץ?</b> מאות, No-Code זול. אלפים, כדאי לחשב.</li><li><b>מי מתחזק בעוד שנה?</b> אם יש עובד שיתחזק, No-Code. אם אין, קוד מתועד עם ספק או ליווי.</li></ol></div></section><section class="ch wrap"><div class="ch-head"><span class="n">08</span><div><h2>שאלות נפוצות</h2></div></div><div class="faq"><details><summary>מה עדיף לעסק קטן, Zapier או Make?<i></i></summary><div class="a">לתהליך פשוט בין אפליקציות מוכרות שניהם עובדים היטב. Zapier נחשב פשוט יותר להתחלה, Make גמיש יותר בתרחישים מרובי שלבים ובדרך כלל זול יותר בנפח. כדאי לנסות את שניהם על אותו תהליך.</div></details><details><summary>כמה עולים Make, Zapier ו-n8n בחודש?<i></i></summary><div class="a">בסוף 2026 החבילות הבסיסיות בתשלום נעות בערך בין $10 ל-$30 בחודש, וחבילות צוות בין כ-$60 ל-$100 ויותר. n8n בהתקנה עצמית בלי רישיון, ומשלמים על שרת. המחירים משתנים, ולכן כדאי לבדוק באתר של כל כלי.</div></details><details><summary>מתי כלי No-Code נתקע?<i></i></summary><div class="a">כשהלוגיקה מסתעפת לעשרות מסלולים, כשצריך לעבד מסמכים בעברית, כשאין מחבר מוכן למערכת ישראלית, כשהנפח מייקר את החבילה, וכשאף אחד בעסק לא יודע לתחזק את התרחיש.</div></details><details><summary>כמה עולה פיתוח מותאם במקום Zapier?<i></i></summary><div class="a">אצל AI Lab Pro אוטומציה בקוד לתהליך אחד מתחילה ב-₪4,900 לפני מע"מ ונבנית תוך 14 יום. העלות החודשית היא בעיקר שרת ושירותים חיצוניים, על החשבונות שלך.</div></details><details><summary>אפשר לשלב בין הגישות?<i></i></summary><div class="a">כן, וזה נפוץ. משאירים ב-Zapier או ב-Make את החיבורים הפשוטים שעובדים, ובונים בקוד רק את החלק שנתקע.</div></details></div></section><section class="ch wrap"><div class="ch-head"><span class="n">09</span><div><h2>לא בטוח מה מתאים לתהליך שלך?</h2></div></div><div class="prose">
+<p>לפעמים התשובה היא תרחיש אחד ב-Make, ולפעמים קוד. כתוב לי בוואטסאפ במילה אחת מה העסק שלך, ואחזור עם 3 רעיונות קונקרטיים. 054-6500795</p>
+<p>כל הפרטים על <a href="/automation/" style="color:var(--acc);border-bottom:1px solid var(--acc)">אוטומציה ב-14 יום</a>, ו<a href="/pricing/" style="color:var(--acc);border-bottom:1px solid var(--acc)">המחירון המלא</a>.</p></div></section><section class="ch wrap"><div class="ch-head"><span class="n">→</span><div><h2>המשך קריאה</h2></div></div><div class="related"><a href="/automation/">אוטומציה ב‑14 יום</a><a href="/blog/automation-for-business/">אוטומציה לעסק: מה כדאי לאוטומט קודם</a><a href="/pricing/">כל המחירים</a><a href="/">דף הבית</a></div></section><section class="ch wrap" id="seat">
+  <div class="seat">
+    <div>
+      <h2>בוא נדבר על העסק שלך.</h2>
+      <div class="status"><i></i>עונה תוך שעה בשעות העבודה.</div>
+      <p><b>כתוב לי במילה אחת מה העסק שלך,</b> ואחזור אליך תוך יום עסקים עם 3 רעיונות קונקרטיים ל‑AI אצלך. בלי התחייבות ובלי מצגות.</p>
+      <span class="how-k">איך זה עובד</span>
+      <ol class="steps2">
+        <li><span class="n">01</span><span>אתה כותב לי במילה אחת מה העסק שלך. כאן בטופס, או ישר בוואטסאפ.</span></li>
+        <li><span class="n">02</span><span>תוך יום עסקים אני חוזר עם 3 רעיונות קונקרטיים ל‑AI אצלך.</span></li>
+        <li><span class="n">03</span><span>בוחרים אחד ומתחילים קטן, במחיר שסוגרים מראש.</span></li>
+      </ol>
+    </div>
+    <form class="form" id="leadForm" novalidate onsubmit="return submitLead(event)">
+      <input type="text" name="website" id="website" tabindex="-1" autocomplete="off" style="position:absolute;inset-inline-start:0;top:0;width:1px;height:1px;opacity:0;pointer-events:none;overflow:hidden" aria-hidden="true">
+      <div class="field"><label for="name">שם</label><input type="text" id="name" name="name" placeholder="איך קוראים לך?" required autocomplete="name"></div>
+      <div class="field"><label for="phone">טלפון (וואטסאפ)</label><input type="tel" id="phone" name="phone" placeholder="050-0000000" required autocomplete="tel"></div>
+      <div class="field"><label for="biz">מה העסק שלך</label><input type="text" id="biz" name="biz" placeholder="במילה אחת: קליניקה, משרד תיווך, חנות…" autocomplete="organization"></div>
+      <button type="submit" class="btn acc">לקבל 3 רעיונות ←</button>
+      <div class="alt"><span>הפרטים נשארים אצל מאיר בלבד.</span><a href="https://wa.me/972546500795?text=%D7%94%D7%99%D7%99%20%D7%9E%D7%90%D7%99%D7%A8%2C%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99%3A%20" target="_blank" rel="noopener" id="formWa" data-cta="form_alt">או ישר בוואטסאפ</a></div>
+      <div class="ok" id="formOk" role="status">קיבלתי, אחזור תוך יום עסקים.<br><a href="https://wa.me/972546500795?text=%D7%94%D7%99%D7%99%20%D7%9E%D7%90%D7%99%D7%A8%2C%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99%3A%20" target="_blank" rel="noopener" data-cta="form_ok">או כתוב לי עכשיו בוואטסאפ</a></div>
+      <div class="err" id="formErr" role="alert">השליחה לא עברה, והפרטים לא הגיעו אליי. שלח לי אותם בוואטסאפ, בלחיצה אחת:<br><a href="https://wa.me/972546500795?text=%D7%94%D7%99%D7%99%20%D7%9E%D7%90%D7%99%D7%A8%2C%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99%3A%20" target="_blank" rel="noopener" data-cta="form_error">לשלוח בוואטסאפ</a></div>
+    </form>
+  </div>
+</section>
+<script>
+const LEADS_URL='https://script.google.com/macros/s/AKfycbwYeWvF6HfrWjmJeVGk4srgwOFDBB7sRDx-_cNvwoZAN_U41es1r4AU2m26iiFBJfflcw/exec';const PRODUCT='אוטומציה';const WA_BASE='https://wa.me/972546500795?text=';
+function waMsg(){const v=id=>(document.getElementById(id).value||'').trim();const n=v('name'),b=v('biz');return 'היי מאיר, '+(n?'אני '+n+'. ':'')+(PRODUCT?'ראיתי באתר: '+PRODUCT+'. ':'')+'העסק שלי: '+b}
+function leadWhatsApp(){window.open(WA_BASE+encodeURIComponent(waMsg()),'_blank')}
+document.getElementById('formWa').addEventListener('click',function(){this.href=WA_BASE+encodeURIComponent(waMsg())});
+// "התקבל" רק אחרי 2xx מהשרת וגם success:true. כל כשל: הודעת כשל + וואטסאפ עם אותם פרטים.
+async function submitLead(e){e.preventDefault();const form=e.target,ok=document.getElementById('formOk'),er=document.getElementById('formErr'),btn=form.querySelector('button[type="submit"]'),orig=btn.innerHTML;const v=id=>(document.getElementById(id).value||'').trim();
+ok.classList.remove('show');er.classList.remove('show');
+const data={name:v('name'),biz:v('biz'),phone:v('phone'),goal:'',website:v('website'),product:PRODUCT,source:location.pathname+(location.search||'')};
+if(!data.name){alert('רק שם וטלפון, ואני חוזר אליך.');return false}if(!/^0\d{1,2}[- ]?\d{3}[- ]?\d{4}$/.test(data.phone)){alert('מספר הטלפון לא נראה תקין.');return false}
+const wa=WA_BASE+encodeURIComponent(waMsg());btn.disabled=true;btn.textContent='שולח…';
+try{const res=await fetch(LEADS_URL,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(data)});if(!res.ok)throw new Error('HTTP '+res.status);const j=await res.json();if(!j||j.success!==true)throw new Error((j&&j.error)||'שגיאה');
+if(window.gtag)gtag('event','generate_lead',{method:'form',product:PRODUCT,page:location.pathname});if(window.fbq)fbq('track','Lead',{content_name:PRODUCT});ok.querySelector('a').href=wa;ok.classList.add('show');form.reset();btn.textContent='נשלח';setTimeout(()=>{btn.disabled=false;btn.innerHTML=orig},4000)}
+catch(err){btn.disabled=false;btn.innerHTML=orig;er.querySelector('a').href=wa;er.classList.add('show')}return false}
+document.querySelectorAll('a[href*="wa.me"]').forEach(a=>a.addEventListener('click',()=>{if(!window.gtag)return;const p={page:location.pathname};if(a.dataset.label){p.label=a.dataset.label;p.product=a.dataset.product||''}gtag('event','whatsapp_click',p)}));
+document.querySelectorAll('a[href="#seat"]').forEach(a=>a.addEventListener('click',()=>{if(window.gtag)gtag('event','cta_click',{cta_section:'to_form',cta_label:a.textContent.trim(),page:location.pathname})}));
+</script>
+</main>
+<footer class="wrap">
+  <div class="fam">
+    <div class="fam-h"><span class="fam-k">המשפחה של AI Lab</span><p>אותו מייסד, אותה שיטה. עוד ארבע זרועות שבונות עם AI.</p></div>
+    <div class="fam-g">
+      <a class="fam-c" style="--c1:#7ef0d4;--c2:#8b5cf6" href="https://ai-lab.co.il" target="_blank" rel="noopener" data-brand="ai-lab"><span class="fam-n"><img src="/gem.png" alt="" width="24" height="24">AI Lab</span><span class="fam-d">מרכז למיומניות העתיד</span><span class="fam-u">ai-lab.co.il ↗</span></a>
+      <a class="fam-c" style="--c1:#F7D08A;--c2:#E8A64A" href="https://starter.ai-lab.co.il" target="_blank" rel="noopener" data-brand="starter"><span class="fam-n"><img src="/gem.png" alt="" width="24" height="24">AI Lab <small>STARTER</small></span><span class="fam-d">הכשרות ושיעורים פרטיים לעצמאים</span><span class="fam-u">starter.ai-lab.co.il ↗</span></a>
+      <a class="fam-c" style="--c1:#E2B08C;--c2:#B4653A" href="https://urban.ai-lab.co.il" target="_blank" rel="noopener" data-brand="urban"><span class="fam-n"><img src="/gem.png" alt="" width="24" height="24">AI Lab <small>URBAN</small></span><span class="fam-d">הכשרות AI לנדל״ן</span><span class="fam-u">urban.ai-lab.co.il ↗</span></a>
+      <a class="fam-c" style="--c1:#9CC3FF;--c2:#5B7CFA" href="https://ailabpro.co" target="_blank" rel="noopener" data-brand="us"><span class="fam-n"><img src="/gem.png" alt="" width="24" height="24">AI Lab <small>PRO · USA</small></span><span class="fam-d">שירותי AI לעסקים קטנים בארה״ב</span><span class="fam-u">ailabpro.co ↗</span></a>
+    </div>
+  </div>
+  <div class="foot">
+    <div><div class="brand"><img src="/gem.png" class="gem" alt="">AI Lab <small>PRO</small></div><p>סוכני AI, אוטומציות, מערכות ואפליקציות לעסקים. נבנה עם Claude. מאיר לביא.</p></div>
+    <div><h4>מה בונים</h4><a href="/website/">אתר לעסק</a><a href="/video/">יצירת וידאו</a><a href="/agent/">סוכן AI</a><a href="/automation/">אוטומציה ב‑14 יום</a><a href="/system/">מערכת פנימית</a><a href="/app/">אפליקציה</a><a href="/mapping/">מיפוי AI</a><a href="/training/">הדרכת AI לעסקים</a><a href="/pricing/">מחירים</a></div>
+    <div><h4>עוד</h4><a href="/start/">התחל: שאלון לתהליך שלך</a><a href="/blog/">בלוג</a><a href="/work/">פרויקטים</a><a href="/about/">מי בונה</a><a href="tel:054-6500795">054-6500795</a><a href="mailto:laviemb@gmail.com">laviemb@gmail.com</a><a href="https://www.linkedin.com/in/meirlavi" target="_blank" rel="noopener">LinkedIn</a><a href="/accessibility/">הצהרת נגישות</a></div>
+  </div>
+  <div class="foot-b"><div>© 2026 AI Lab · מאיר לביא · עוסק מורשה · <a href="/accessibility/">הצהרת נגישות</a></div><div class="mono">PRO / 2026</div></div>
+</footer>
+<a href="https://wa.me/972546500795?text=%D7%94%D7%99%D7%99%20%D7%9E%D7%90%D7%99%D7%A8%2C%20%D7%94%D7%A2%D7%A1%D7%A7%20%D7%A9%D7%9C%D7%99%3A%20" id="wabar" class="wabar" target="_blank" rel="noopener" data-cta="sticky_bar" aria-label="3 רעיונות ל-AI לעסק שלך, בוואטסאפ"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.27-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.41"/></svg><span>3 רעיונות ל‑AI לעסק שלך, בוואטסאפ</span></a>
+<script src="/assets/wa.js" defer></script>
+</body>
+</html>
