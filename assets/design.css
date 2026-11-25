@@ -159,3 +159,20 @@ p{color:var(--fg-2);text-wrap:pretty}
 }
 /* מיקוד מקלדת לא נבלע מתחת לבר הוואטסאפ הדביק */
 @media (max-width:760px){html{scroll-padding-bottom:84px}}
+
+/* ===== footer v2 (25.11): 4 clear columns, no counters ===== */
+.foot{display:grid;grid-template-columns:1.3fr 1.6fr 1fr 1fr;gap:28px clamp(24px,4vw,56px);align-items:start}
+.foot h4{display:block;margin-bottom:8px;font-size:1rem;color:#fff}
+.foot h4::before{content:none}
+.foot p{margin-top:12px;max-width:30ch}
+.foot .two{display:grid;grid-template-columns:repeat(2,max-content);column-gap:clamp(20px,3vw,40px)}
+.foot a{padding:6px 0;font-size:.95rem;width:fit-content}
+.foot a[dir=ltr]{text-align:right}
+.foot-b{justify-content:flex-start}
+@media (max-width:1020px){.foot{grid-template-columns:1fr 1fr}.foot-brand,.foot-prod{grid-column:1/-1}}
+@media (max-width:760px){
+  .foot{gap:22px 18px}
+  .foot p{margin-top:8px;font-size:.88rem;max-width:none}
+  .foot a{padding:5px 0;font-size:.92rem}
+  .foot .two{grid-template-columns:1fr 1fr;column-gap:16px}
+}
