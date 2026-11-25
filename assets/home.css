@@ -314,3 +314,42 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 @media (min-width:761px){.menu li{order:0}.calc-more{display:none!important}}
 
 html.static .marq .track,html.static .typing i{animation:none}
+
+/* פיילוט "פחות טקסט" (25.11.2026): מובייל קצר יותר */
+@media (max-width:760px){
+  .pstrip{display:none}
+  .own{grid-template-columns:1fr 1fr}
+  .own>div{padding:16px;border-radius:18px}
+  .own p{font-size:.92rem}
+  .section{padding-block:28px}
+  .meet{padding:14px 18px}
+  #bigNum{font-size:3.6rem}
+  .cases li{padding:20px;gap:10px}
+  .col{gap:10px}
+  .col li{padding:11px 0;padding-inline-start:30px}
+  .col li::before{top:18px}.col.course li::before{top:14px}
+  .cl-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .cl-grid li{height:64px;padding:0 6px}
+  .cl-grid img{height:calc(var(--h,34px) * .5)}
+  .cases .stack{display:none}
+  .cases h3{font-size:1.2rem;margin-bottom:4px}
+  .spec li{padding:14px;gap:6px}
+  .spec b{font-size:1.6rem}
+  .spec li>span{font-size:.9rem}
+  .portrait{aspect-ratio:16/10}
+  .portrait img{object-position:50% 20%}
+  .who .stackline{display:none}
+  .fam-g{grid-template-columns:1fr 1fr;gap:8px}
+  .fam-c{padding:16px 14px 12px}
+  .fam-n{font-size:1.05rem;flex-wrap:wrap}
+  .fam-d{font-size:.84rem}
+  .fam-u{font-size:.72rem}
+  .nightp{padding:24px 16px}
+  .numwrap{display:flex;align-items:baseline;gap:12px;padding-block:0}
+  .list{grid-template-columns:1fr 1fr;gap:8px}
+  .meet{padding:12px 14px;border-radius:16px;align-content:start}
+  .meet .mt{flex-direction:column;gap:2px}
+  .meet h3{font-size:1.02rem}
+  .meet p{font-size:.88rem;line-height:1.4}
+  .meet:last-child{grid-column:1/-1}
+}
