@@ -159,3 +159,14 @@ footer.ifoot a{color:var(--fg-2);border-bottom:1px solid var(--line-2)}
 .ihead{-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
 .ihead nav a:hover,.ihead nav button:hover{color:var(--blue)}
 textarea.in,select.in{font:inherit;font-size:16px;color:var(--fg)}
+
+/* בדיקת המסכים שאחרי כניסה (25.11.2026): תיקוני סקין בלבד */
+/* מיקוד מקלדת ברור על רקע בהיר (קודם: רק שינוי צבע של קו דק) */
+input.in:focus-visible,select.in:focus-visible,textarea.in:focus-visible{outline:3px solid var(--blue);outline-offset:1px;border-color:var(--blue)}
+/* טבלת הלקוחות באדמין: נגללת לרוחב בתוך הכרטיס במקום להישבר לאותיות בודדות */
+.tscroll .ctable{min-width:880px}
+.tscroll .ctable td{overflow-wrap:normal}
+.tscroll .ctable td[dir="ltr"]{white-space:nowrap;text-align:right}
+/* פס ההתקדמות הדביק יושב מתחת לכותרת (שגבהה עכשיו) ולא מאחוריה */
+.progress{top:68px}
+
