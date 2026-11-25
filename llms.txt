@@ -50,6 +50,9 @@
 - https://pro.ai-lab.co.il/blog/how-to-choose-ai-automation-vendor/ איך לבחור ספק אוטומציה ו-AI: 10 שאלות
 - https://pro.ai-lab.co.il/blog/whatsapp-agent-for-clinic/ סוכן וואטסאפ לקליניקה: תורים, תזכורות, פרטיות ומחיר
 - https://pro.ai-lab.co.il/blog/ai-agent-for-real-estate-brokerage/ סוכן AI למשרד תיווך נדל"ן: וואטסאפ, סיורים, פרטיות ומחיר
+- https://pro.ai-lab.co.il/blog/video-for-business-cost/ כמה עולה סרטון תדמית לעסק ב-2026: מחיר, זמן ומה כלול
+- https://pro.ai-lab.co.il/blog/app-development-cost-israel/ כמה עולה לפתח אפליקציה לעסק, ומתי אפליקציית ווב מספיקה
+- https://pro.ai-lab.co.il/blog/custom-system-vs-off-the-shelf/ מערכת ניהול בהתאמה אישית מול תוכנת מדף: מתי כל אחת
 
 ## קשור
 - AI Lab לילדים ונוער: https://ai-lab.co.il
