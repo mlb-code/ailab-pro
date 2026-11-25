@@ -23,6 +23,7 @@ p b,li b{color:var(--fg);font-weight:700}
 .phero h1{font-size:clamp(2.1rem,4.3vw,3.7rem);line-height:1.02;letter-spacing:-.036em;max-width:20ch;margin-bottom:16px}
 .phero .lead{max-width:56ch;color:var(--fg-2)}
 .phero .lead b{color:#fff;font-weight:700}
+.phero .lead a{display:inline-block;padding:4px 0;color:var(--sun);font-weight:700;text-decoration:underline;text-underline-offset:5px;white-space:nowrap}
 .phero .offer{margin-top:20px}
 .phero .ctas{margin-top:16px}
 .phero .ctas .btn:not(.acc){min-height:44px;padding:8px 6px;border-color:transparent;border-radius:8px;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:6px}
@@ -163,4 +164,61 @@ p b,li b{color:var(--fg);font-weight:700}
   html:has(link[rel="canonical"][href$="/agent/"]) .fam-n{font-size:1.05rem;flex-wrap:wrap}
   html:has(link[rel="canonical"][href$="/agent/"]) .fam-d{font-size:.84rem}
   html:has(link[rel="canonical"][href$="/agent/"]) .fam-u{font-size:.72rem}
+  html:has(link[rel="canonical"][href$="/agent/"]) .ch{padding-block:16px}
+  html:has(link[rel="canonical"][href$="/agent/"]) .ch-head{gap:8px;margin-bottom:12px}
+  html:has(link[rel="canonical"][href$="/agent/"]) .ch-head h2{font-size:1.6rem}
+  html:has(link[rel="canonical"][href$="/agent/"]) .phero .crumbs{padding-bottom:8px}
+  html:has(link[rel="canonical"][href$="/agent/"]) .phero .offer{margin-top:10px;padding:8px 12px}
+  html:has(link[rel="canonical"][href$="/agent/"]) .phero .fine{margin-top:8px;font-size:.82rem}
+  html:has(link[rel="canonical"][href$="/agent/"]) .bigword,.bigword.long{min-height:96px;font-size:3rem}
+  html:has(link[rel="canonical"][href$="/agent/"]) .spec li{padding:12px;gap:4px}
+  html:has(link[rel="canonical"][href$="/agent/"]) .spec li::before{content:none}
+  html:has(link[rel="canonical"][href$="/agent/"]) .prose{padding:16px 18px}
+  html:has(link[rel="canonical"][href$="/agent/"]) .prose h3{font-size:1.12rem;margin:14px 0 6px}
+  html:has(link[rel="canonical"][href$="/agent/"]) .prose h3:first-child{margin-top:0}
+  html:has(link[rel="canonical"][href$="/agent/"]) .prose ul{margin:0}
+  html:has(link[rel="canonical"][href$="/agent/"]) .prose li{margin-bottom:4px;font-size:.95rem}
+  html:has(link[rel="canonical"][href$="/agent/"]) .cols{grid-template-columns:1fr 1fr;gap:8px}
+  html:has(link[rel="canonical"][href$="/agent/"]) .col{padding:14px;gap:8px;border-radius:20px}
+  html:has(link[rel="canonical"][href$="/agent/"]) .col .label,.col .label.acc{font-size:.98rem;line-height:1.2}
+  html:has(link[rel="canonical"][href$="/agent/"]) .col li{padding:8px 0;padding-inline-start:0;font-size:.88rem;line-height:1.4}
+  html:has(link[rel="canonical"][href$="/agent/"]) .col li::before,.col.yes li::before{content:none}
+  html:has(link[rel="canonical"][href$="/agent/"]) .steps li{padding:12px 14px}
+  html:has(link[rel="canonical"][href$="/agent/"]) .faq summary{min-height:56px;padding:12px 16px;font-size:1.02rem}
+  html:has(link[rel="canonical"][href$="/agent/"]) .related a{min-height:44px;padding:8px 16px;font-size:.9rem}
+  html:has(link[rel="canonical"][href$="/agent/"]) .seat{padding:20px 14px 14px;gap:16px}
+  html:has(link[rel="canonical"][href$="/agent/"]) .seat>div:first-child{gap:12px}
+  html:has(link[rel="canonical"][href$="/agent/"]) .seat>div:first-child>p{font-size:1rem}
+  html:has(link[rel="canonical"][href$="/agent/"]) .form{gap:10px;padding:16px}
+  html:has(link[rel="canonical"][href$="/agent/"]) .form input[type=text],.form input[type=tel]{min-height:48px;padding:10px 14px}
+  html:has(link[rel="canonical"][href$="/agent/"]) footer.wrap{margin-top:20px;padding-block:26px 88px}
+  html:has(link[rel="canonical"][href$="/agent/"]) .fam{gap:12px;padding-bottom:18px;margin-bottom:18px}
+  html:has(link[rel="canonical"][href$="/agent/"]) .fam-h p,.fam-d{display:none}
+  html:has(link[rel="canonical"][href$="/agent/"]) .fam-c{padding:12px 12px 10px;gap:2px}
+  html:has(link[rel="canonical"][href$="/agent/"]) .foot{gap:14px 18px}
+  html:has(link[rel="canonical"][href$="/agent/"]) .foot p{margin-top:8px;font-size:.86rem;max-width:none}
+  html:has(link[rel="canonical"][href$="/agent/"]) .foot h4{margin-bottom:2px;font-size:1rem}
+  html:has(link[rel="canonical"][href$="/agent/"]) .foot a{padding:5px 0;font-size:.9rem}
+  html:has(link[rel="canonical"][href$="/agent/"]) .foot-b{margin-top:16px;padding-top:12px}
+  html:has(link[rel="canonical"][href$="/agent/"]) .prose{columns:2;column-gap:16px}
+  html:has(link[rel="canonical"][href$="/agent/"]) .prose h3{break-after:avoid;font-size:1rem;line-height:1.25}
+  html:has(link[rel="canonical"][href$="/agent/"]) .prose h3:nth-of-type(2){break-before:column;margin-top:0}
+  html:has(link[rel="canonical"][href$="/agent/"]) .prose ul{break-inside:avoid}
+  html:has(link[rel="canonical"][href$="/agent/"]) .prose li{padding-inline-start:0;font-size:.88rem;line-height:1.4;margin-bottom:6px}
+  html:has(link[rel="canonical"][href$="/agent/"]) .prose li::before{content:none}
+  html:has(link[rel="canonical"][href$="/agent/"]) .foot{grid-template-columns:minmax(0,1fr)}
+  html:has(link[rel="canonical"][href$="/agent/"]) .foot>div:not(:first-child){display:flex;flex-wrap:wrap;gap:0 16px}
+  html:has(link[rel="canonical"][href$="/agent/"]) .foot h4{flex-basis:100%}
+  html:has(link[rel="canonical"][href$="/agent/"]) .ch-head .n{font-size:.72rem}
+  html:has(link[rel="canonical"][href$="/agent/"]) .bigword{display:none}
+  html:has(link[rel="canonical"][href$="/agent/"]) .ch{padding-block:13px}
+  html:has(link[rel="canonical"][href$="/agent/"]) .fam-u{display:none}
+  html:has(link[rel="canonical"][href$="/agent/"]) .fam-c{padding:12px}
+  html:has(link[rel="canonical"][href$="/agent/"]) .related{gap:6px}
+  html:has(link[rel="canonical"][href$="/agent/"]) .steps li{padding:10px 14px}
+  html:has(link[rel="canonical"][href$="/agent/"]) .steps{gap:6px}
 }
+
+/* מפרט עם 4 פריטים: שורה אחת בדסקטופ (בלי אריח יתום) */
+@media (min-width:1021px){.spec:has(>li:nth-child(4):last-child){grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (min-width:761px){html:has(link[rel="canonical"][href$="/agent/"]) .prose{columns:2;column-gap:40px}html:has(link[rel="canonical"][href$="/agent/"]) .prose h3:first-child{margin-top:0}html:has(link[rel="canonical"][href$="/agent/"]) .prose h3:nth-of-type(2){break-before:column;margin-top:0}html:has(link[rel="canonical"][href$="/agent/"]) .prose ul{break-inside:avoid;margin-bottom:0}}
