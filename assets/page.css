@@ -240,3 +240,14 @@ p b,li b{color:var(--fg);font-weight:700}
   .steps h3{font-size:1.05rem}
 }
 }
+.phero .fine a{display:inline-block;padding:6px 0;color:#fff;text-decoration:underline;text-underline-offset:4px}
+
+/* טבלאות במאמרים: רחבות מספיק לקריאה, נגללות בתוך עצמן, עם רמז גלילה במובייל */
+.prose .tbl table{min-width:620px}
+@media (max-width:760px){
+  .prose .tbl::before{content:"← הטבלה נגללת לצדדים";display:block;position:sticky;inset-inline-start:0;width:max-content;padding:8px 14px 2px;font-size:.74rem;font-weight:600;color:var(--muted)}
+  .prose .tbl th,.prose .tbl td{padding:9px 12px}
+}
+/* מאמרים: באריחי מפרט הכותרת היא לפעמים ביטוי ארוך ולא מספר, לכן קטנה יותר */
+main:has(.crumbs a[href="/blog/"]) .spec b{font-size:clamp(1.15rem,1.7vw,1.45rem);line-height:1.15;letter-spacing:-.02em;overflow-wrap:break-word}
+@media (max-width:760px){main:has(.crumbs a[href="/blog/"]) .spec b{font-size:1.05rem}}

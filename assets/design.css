@@ -138,7 +138,7 @@ p{color:var(--fg-2);text-wrap:pretty}
 .wabar svg{width:22px;height:22px;fill:currentColor;flex:none}
 .wabar.on{opacity:1;visibility:visible;transform:none}
 @media (max-width:760px){.wabar{inset-inline:12px;bottom:calc(10px + env(safe-area-inset-bottom));min-height:54px;padding:0 18px;border-radius:999px;font-size:.98rem;transform:translateY(130%)}}
-@media (min-width:761px){.wabar{inset-inline-end:22px;bottom:22px;height:56px;min-width:56px;padding:0 17px;gap:0;border-radius:999px;transform:translateY(16px)}.wabar span{max-width:0;overflow:hidden;white-space:nowrap;transition:max-width .35s,margin .35s}.wabar:hover span,.wabar:focus-visible span{max-width:320px;margin-inline-start:10px}}
+@media (min-width:761px){.wabar{inset-inline-end:max(12px,calc((100vw - var(--maxw)) / 2 - 84px));bottom:22px;height:52px;min-width:52px;padding:0 15px;gap:0;border-radius:999px;transform:translateY(16px)}.wabar span{max-width:0;overflow:hidden;white-space:nowrap;transition:max-width .35s,margin .35s}.wabar:hover span,.wabar:focus-visible span{max-width:320px;margin-inline-start:10px}}
 
 /* שמות טוקנים ישנים (המחולל וה-CSS של /start משתמשים בהם) */
 :root{--acc:var(--blue);--acc-2:var(--blue-2);--bg-2:var(--blue-soft);--serif:var(--head);--mono:var(--head)}
@@ -157,3 +157,5 @@ p{color:var(--fg-2);text-wrap:pretty}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
 }
+/* מיקוד מקלדת לא נבלע מתחת לבר הוואטסאפ הדביק */
+@media (max-width:760px){html{scroll-padding-bottom:84px}}
